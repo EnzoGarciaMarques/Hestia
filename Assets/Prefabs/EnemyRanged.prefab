@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.74, y: 2.47, z: 4.19}
-  m_LocalScale: {x: 0.3802964, y: 0.3802964, z: 0.3802964}
+  m_LocalScale: {x: 0.12011142, y: 0.12011142, z: 0.12011142}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3283099504845962801}
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84bb5a610916f6d43a7c3e3b16c590df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8e6a1a81a8be2a4fbcb0be499de7197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 1
   level: 0
   upgradePerLvl: 0
   flametime: 10
@@ -172,8 +172,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.680001, y: 9.600001, z: 0.20000003}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 11.837173, y: 13.473727, z: 0.19999759}
+  m_Center: {x: 0.03149186, y: -0.0472403, z: 0.0000012244693}
 --- !u!114 &6246063228746053813
 MonoBehaviour:
   m_ObjectHideFlags: 0
