@@ -9,10 +9,12 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] int lenghtAtack;
     private float timer;
     private GameObject player;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        anim = GetComponent<Animator>();
 
     }
 
@@ -20,6 +22,7 @@ public class MeleeEnemy : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
+        print(distance);
         if (!atacking) 
         {
             if (distance < meleeRange)
@@ -29,12 +32,16 @@ public class MeleeEnemy : MonoBehaviour
                 {
                     timer = 0;
                     StartCoroutine(Punch());
+
                 }
             }
             else
             {
                 Vector3 direction = (player.transform.position - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;
+                anim.SetBool("Batendo", false);
+
+
             }
         }
 
@@ -44,6 +51,7 @@ public class MeleeEnemy : MonoBehaviour
 
     IEnumerator Punch()
     {
+        anim.SetBool("Batendo", true);
         atacking = true;
         RaycastHit hit;
 
@@ -53,6 +61,12 @@ public class MeleeEnemy : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         atacking = false;
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(5, 5, 5));
     }
 
 }

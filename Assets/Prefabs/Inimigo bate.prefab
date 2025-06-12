@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  meleeRange: 2
+  meleeRange: 1
   lenghtAtack: 3
 --- !u!114 &8007184085542876078
 MonoBehaviour:
