@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MouseMovement : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class MouseMovement : MonoBehaviour
     [SerializeField] float bottomLimit = 90f;
     float yRotation;
     float xRotation;
-    
+
+    InputAction looktAction;
+    Vector2 lookInput;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

@@ -51,22 +51,16 @@ public class MeleeEnemy : MonoBehaviour
 
     IEnumerator Punch()
     {
-        anim.SetBool("Batendo", true);
         atacking = true;
+        yield return new WaitForSeconds(1 / 2);
+        anim.SetBool("Batendo", true);
         RaycastHit hit;
-
         if (Physics.Raycast(transform.position, transform.forward, out hit, lenghtAtack))
         {
             print("Pegou");
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1/2);
         atacking = false;
-    }
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position, new Vector3(5, 5, 5));
     }
 
 }
