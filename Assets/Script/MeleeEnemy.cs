@@ -23,8 +23,8 @@ public class MeleeEnemy : MonoBehaviour
     void Update()
     {
         if (ice == false) {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            print(distance);
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
             if (!atacking)
             {
                 if (distance < meleeRange)
@@ -56,14 +56,14 @@ public class MeleeEnemy : MonoBehaviour
     IEnumerator Punch()
     {
         atacking = true;
-        yield return new WaitForSeconds(1 / 2);
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("Batendo", true);
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, lenghtAtack))
         {
             print("Pegou");
         }
-        yield return new WaitForSeconds(1/2);
+        yield return new WaitForSeconds(0.5f);
         atacking = false;
     }
     private void OnTriggerEnter(Collider other)
