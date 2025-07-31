@@ -5,13 +5,17 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     [SerializeField] GameObject fireBallPrefab;
+    [SerializeField] GameObject iceSpearPrefab;
     [SerializeField] Transform ejectFire;
     [SerializeField] float cooldown;
+    [SerializeField] float amplifierCooldown;
     [SerializeField] float velocity;
     bool onCooldown = false;
     public float damage;
     public int level = 0;
     [SerializeField] float upgradePerLevel;
+    public int magic = 0;
+    bool amplifier = false;
     void Start()
     {
         damage = damage + upgradePerLevel * level;
@@ -20,9 +24,17 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && !onCooldown)
+        if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 1)
         {
             StartCoroutine(Fire());
+        }
+        if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 2)
+        {
+            StartCoroutine(Ice());
+        }
+        if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 3)
+        {
+            StartCoroutine(Amplifier())
         }
     }
     IEnumerator Fire()
@@ -30,6 +42,23 @@ public class FireBall : MonoBehaviour
         onCooldown = true;
         GameObject fireBall = Instantiate(fireBallPrefab, ejectFire.position, Quaternion.identity);
         fireBall.GetComponent<Rigidbody>().AddForce(ejectFire.forward.normalized * velocity, ForceMode.Impulse);
+        yield return new WaitForSeconds(cooldown);
+        onCooldown = false;
+    }
+    IEnumerator Ice()
+    {
+        onCooldown = true;
+        GameObject iceSpear = Instantiate(iceSpearPrefab, ejectFire.position, Quaternion.identity);
+        iceSpear.GetComponent<Rigidbody>().AddForce(ejectFire.forward.normalized * velocity, ForceMode.Impulse);
+        yield return new WaitForSeconds(cooldown);
+        onCooldown = false;
+    }
+    IEnumerator Amplifier()
+    {
+        amplifier = true;
+        yield return new WaitForSeconds(amplifierCooldown);
+        amplifier = false;
+        onCooldown = true;
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
     }
