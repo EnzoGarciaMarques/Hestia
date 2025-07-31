@@ -15,7 +15,7 @@ public class FireBall : MonoBehaviour
     public int level = 0;
     [SerializeField] float upgradePerLevel;
     public int magic = 0;
-    bool amplifier = false;
+    public bool amplifier = false;
     void Start()
     {
         damage = damage + upgradePerLevel * level;
@@ -34,7 +34,7 @@ public class FireBall : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 3)
         {
-            StartCoroutine(Amplifier())
+            StartCoroutine(Amplifier());
         }
     }
     IEnumerator Fire()

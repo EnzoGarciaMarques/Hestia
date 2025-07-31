@@ -15,6 +15,7 @@ public class RevolverScript : MonoBehaviour
     float ammo;
     float nextTimeToFire = 0f;
     bool isReloading;
+    FireBall magic;
 
     [SerializeField] TextMeshProUGUI text;
 
@@ -59,7 +60,14 @@ public class RevolverScript : MonoBehaviour
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
             {
-                damage.TakeDamage(dano);
+                if (magic.amplifier == false)
+                {
+                    damage.TakeDamage(dano);
+                }
+                else
+                {
+                    damage.TakeDamage(dano*2);
+                }
             }
         }
        

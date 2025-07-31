@@ -10,6 +10,7 @@ public class MeleeEnemy : MonoBehaviour
     private float timer;
     private GameObject player;
     Animator anim;
+    bool ice = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,29 +22,32 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        print(distance);
-        if (!atacking) 
-        {
-            if (distance < meleeRange)
+        if (ice == false) {
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            print(distance);
+            if (!atacking)
             {
-                timer += Time.deltaTime;
-                if (timer > 1)
+                if (distance < meleeRange)
                 {
-                    timer = 0;
-                    StartCoroutine(Punch());
+                    timer += Time.deltaTime;
+                    if (timer > 1)
+                    {
+                        timer = 0;
+                        StartCoroutine(Punch());
+
+                    }
+                }
+                else
+                {
+                    Vector3 direction = (player.transform.position - transform.position).normalized;
+                    transform.position += direction * speed * Time.deltaTime;
+                    anim.SetBool("Batendo", false);
+
 
                 }
             }
-            else
-            {
-                Vector3 direction = (player.transform.position - transform.position).normalized;
-                transform.position += direction * speed * Time.deltaTime;
-                anim.SetBool("Batendo", false);
-
-
-            }
         }
+        
 
         
     }
@@ -62,5 +66,18 @@ public class MeleeEnemy : MonoBehaviour
         yield return new WaitForSeconds(1/2);
         atacking = false;
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ice"))
+        {
+            Destroy(other.gameObject);
+            StartCoroutine(Freeze());
+        }
+    }
+    IEnumerator Freeze()
+    {
+        ice = true ;
+        yield return new WaitForSeconds(2);
+        ice = false ;
+    }
 }

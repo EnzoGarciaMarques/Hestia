@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ec1b5bf7f67ab4791c4a8c7e70ac10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 0
   shootingRange: 10
   Bala: {fileID: 8158374507016095979, guid: 52188fcb6cfd15f4cba5e2372daed9b2, type: 3}
   Balapos: {fileID: 3283099504845962801}
