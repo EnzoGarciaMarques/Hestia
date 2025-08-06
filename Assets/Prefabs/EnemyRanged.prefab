@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   shootingRange: 10
-  Bala: {fileID: 8158374507016095979, guid: 52188fcb6cfd15f4cba5e2372daed9b2, type: 3}
+  Bala: {fileID: 1266233508961280994, guid: 95163e3d055045e47873b0643db1d7ad, type: 3}
   Balapos: {fileID: 3283099504845962801}
 --- !u!54 &4301386082356575748
 Rigidbody:
