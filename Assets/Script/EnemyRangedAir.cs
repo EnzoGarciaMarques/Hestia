@@ -11,10 +11,12 @@ public class EnemyRangedAir : MonoBehaviour
     private float timer;
     private GameObject player;
     bool ice = false;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        anim = GetComponent<Animator>();
         
     }
 
@@ -33,14 +35,27 @@ public class EnemyRangedAir : MonoBehaviour
                     timer = 0;
                     shoot();
                 }
+
+
             }
-            
+            else
+            {
+                Vector3 direction = (player.transform.position - transform.position).normalized;
+                transform.position += direction * speed * Time.deltaTime;
+                anim.SetBool("ataque", false);
+
+
+            }
+
+
         }
         
     }
     
     void shoot()
     {
+        anim.SetBool("ataque", true);
+
         Instantiate(Bala, Balapos.position, Quaternion.identity);
     }
     private void OnTriggerEnter(Collider other)

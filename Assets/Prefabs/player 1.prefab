@@ -420,5 +420,5 @@ MonoBehaviour:
   damage: 10
   level: 0
   upgradePerLevel: 0
-  magic: 2
+  magic: 1
   amplifier: 0
