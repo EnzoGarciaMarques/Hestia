@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
@@ -11,10 +12,14 @@ public class EnemyBullet : MonoBehaviour
     private float timer;
     public int level = 0;
     [SerializeField] float upgradePerLevel;
+    Vector3 cameraDir;
 
     private void Awake()
     {
-        damageEnemy = damageEnemy + upgradePerLevel * level;
+        cameraDir = Camera.main.transform.forward;
+        cameraDir.z = 0;
+
+        transform.rotation = Quaternion.LookRotation(cameraDir);
     }
     // Start is called before the first frame update
     void Start()

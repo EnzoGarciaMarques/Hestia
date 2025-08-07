@@ -32,14 +32,13 @@ public class DamageEnemy : MonoBehaviour
         {
             StartCoroutine(Flametime());
 
-            TakeDamage(fire.damage);
-            print("fogo");
-
         }
     }
     IEnumerator Flametime()
     {
+        TakeDamage(fire.damage);
         yield return new WaitForSeconds(flametime);
+        TakeDamage(fire.damage);
         flameOn = false;
     }
 

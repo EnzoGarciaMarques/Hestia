@@ -22,7 +22,7 @@ public class EnemyRangedAir : MonoBehaviour
     void Update()
     {
         if (ice == false) {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
+            float distance = Vector3.Distance(transform.position, player.transform.position);
 
             // If within shooting range, shoot at intervals
             if (distance < shootingRange)
@@ -34,12 +34,7 @@ public class EnemyRangedAir : MonoBehaviour
                     shoot();
                 }
             }
-            else
-            // If not within shooting range, chase the player
-            {
-                Vector3 direction = (player.transform.position - transform.position).normalized;
-                transform.position += direction * speed * Time.deltaTime;
-            }
+            
         }
         
     }

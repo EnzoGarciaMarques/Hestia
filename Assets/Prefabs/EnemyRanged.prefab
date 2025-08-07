@@ -152,7 +152,7 @@ MonoBehaviour:
   health: 1
   level: 0
   upgradePerLvl: 0
-  flametime: 10
+  flametime: 2
   fire: {fileID: 0}
 --- !u!65 &8859553824269852680
 BoxCollider:
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   shootingRange: 10
-  Bala: {fileID: 1266233508961280994, guid: 95163e3d055045e47873b0643db1d7ad, type: 3}
+  Bala: {fileID: 5842031046974321599, guid: 93e8d10a04aca484e99ae0fded7e7ac8, type: 3}
   Balapos: {fileID: 3283099504845962801}
 --- !u!54 &4301386082356575748
 Rigidbody:

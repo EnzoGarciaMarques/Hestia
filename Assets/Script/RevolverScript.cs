@@ -60,14 +60,11 @@ public class RevolverScript : MonoBehaviour
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
             {
-                if (magic.amplifier == false)
-                {
+
                     damage.TakeDamage(dano);
-                }
-                else
-                {
-                    damage.TakeDamage(dano*2);
-                }
+
+
+                
             }
         }
        

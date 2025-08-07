@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14010f33bbc31c479d53df59d27af03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensivity: 1000
+  mouseSensivity: 500
   topLimit: -90
   bottomLimit: 90
 --- !u!114 &575177792266481365
@@ -151,11 +151,11 @@ MonoBehaviour:
   speed: 8
   gravity: -19.62
   jumpHeight: 0
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 8384609777126021544}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!54 &3217790891640494979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -406,13 +406,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6982403804827963060}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fc2857c2f81f46488b857361b6e9773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireBallPrefab: {fileID: 2127841030737929711, guid: aef2cabba8b3a704dbd0ca9b2889dab0, type: 3}
-  iceSpearPrefab: {fileID: 0}
+  iceSpearPrefab: {fileID: 2127841030737929711, guid: dcd14efee92885c4abafd1b190e6a3dd, type: 3}
   ejectFire: {fileID: 3828800730159644335}
   cooldown: 6
   amplifierCooldown: 0
@@ -420,5 +420,5 @@ MonoBehaviour:
   damage: 10
   level: 0
   upgradePerLevel: 0
-  magic: 0
+  magic: 2
   amplifier: 0
