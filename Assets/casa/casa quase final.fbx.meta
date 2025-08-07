@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: f09cb73e8b11dc545883639c39c6a0b2
+guid: 9e5e71b4c2842c947a572c646530efc8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 4338dede83be7f940a131ff98e0b4a1f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 181502e347968af46897d67d2b988d42, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 974a31b91ce36bb4cb70ca3733493d7d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 864b908f7ae8d774abfa503422a4c0fb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.008
-    second: {fileID: 2100000, guid: cef0f332bb7c04743b70a273eefaf4a9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -52,6 +27,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: cadeira cozinha
+    second: {fileID: 2100000, guid: 9e75a05824be8094b9ba40a45aea9cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: cadeira sala
     second: {fileID: 2100000, guid: 1da3b1974a3858d4bb609d2f670bf733, type: 2}
   - first:
@@ -62,13 +42,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: cortina sala
+      name: cortina cozinha
     second: {fileID: 2100000, guid: 864b908f7ae8d774abfa503422a4c0fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: cortina sala
+    second: {fileID: 2100000, guid: 1da3b1974a3858d4bb609d2f670bf733, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: cortininha cozinha
-    second: {fileID: 2100000, guid: 864b908f7ae8d774abfa503422a4c0fb, type: 2}
+    second: {fileID: 2100000, guid: 9e75a05824be8094b9ba40a45aea9cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exaustor
+    second: {fileID: 2100000, guid: 558f18d67b705d941b87d3494c244079, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ima de geladeira
+    second: {fileID: 2100000, guid: cef0f332bb7c04743b70a273eefaf4a9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -97,8 +92,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: m. ovos
-    second: {fileID: 2100000, guid: f5ff5425ba921e44ca2a3961bfaa73e6, type: 2}
+      name: luz sala
+    second: {fileID: 2100000, guid: 2167818f29bda0e4885fab35daa8d5b5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -108,12 +103,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: madeira clara
-    second: {fileID: 2100000, guid: 38b740f1089c5ee429225d6e3c5cd517, type: 2}
+    second: {fileID: 2100000, guid: f5fb45f644875134eb2a88f3f6836018, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: madeira escura
     second: {fileID: 2100000, guid: 38b740f1089c5ee429225d6e3c5cd517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ovo
+    second: {fileID: 2100000, guid: f5ff5425ba921e44ca2a3961bfaa73e6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -192,8 +192,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: porta
-    second: {fileID: 2100000, guid: 2f9796ca2bab20e41a36b3194fa36d63, type: 2}
+      name: pedra
+    second: {fileID: 2100000, guid: 92db3e7a61e950743a4a31a9afa0bd03, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -202,8 +202,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: pote quadrado cenoura
+    second: {fileID: 2100000, guid: 751e088f52bfbb44a82429d3aab39248, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote quadrado mirtilo
+    second: {fileID: 2100000, guid: 8c4c391d208af454b9334b84af1e7b1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote quadrado morango
+    second: {fileID: 2100000, guid: 681eab798a6e01646b72f35ac46d05ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote redondo banana
+    second: {fileID: 2100000, guid: 4e94573ab52f5464ea02ca24b17b415b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote redondo brocolis
+    second: {fileID: 2100000, guid: c28c70398525a60468fb663d43cf4e23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote redondo chocolate
+    second: {fileID: 2100000, guid: f940bd211d6106f4783796996c25fa95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pote redondo uva
+    second: {fileID: 2100000, guid: f4621f9d99f66c64bb632a4afc878325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: sofa
     second: {fileID: 2100000, guid: a67b8dd4655151d4dadcac4638b820b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tapete
+    second: {fileID: 2100000, guid: 181502e347968af46897d67d2b988d42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: totoro
+    second: {fileID: 2100000, guid: 974a31b91ce36bb4cb70ca3733493d7d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
