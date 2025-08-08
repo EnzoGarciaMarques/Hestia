@@ -2441,6 +2441,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576946045599159175, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: amplifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4576946045599159175, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

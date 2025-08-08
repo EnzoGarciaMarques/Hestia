@@ -17,16 +17,18 @@ public class RevolverScript : MonoBehaviour
     bool isReloading;
     FireBall magic;
 
+
     [SerializeField] TextMeshProUGUI text;
 
     private void Start()
     {
         ammo = maxAmmo;
+
     }
     // Update is called once per frame
     void Update()
     {
-        text.text = "6/" + ammo;
+            text.text = "6/" + ammo;
         if (isReloading)
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))

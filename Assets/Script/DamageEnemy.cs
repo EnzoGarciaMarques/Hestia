@@ -20,11 +20,15 @@ public class DamageEnemy : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0)
+        if (fire.amplifier == true)
         {
-            Destroy(gameObject);
+            health -= amount*2;
         }
+        else
+        {
+            health -= amount;
+        }
+
     }
     private void Update()
     {
@@ -32,6 +36,10 @@ public class DamageEnemy : MonoBehaviour
         {
             StartCoroutine(Flametime());
 
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     IEnumerator Flametime()
