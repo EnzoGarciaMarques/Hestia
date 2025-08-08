@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEnemy: 10
-  force: 10
+  force: 30
   level: 0
   upgradePerLevel: 0
 --- !u!54 &5828716849846227879
