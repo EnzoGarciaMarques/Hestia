@@ -11,7 +11,7 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] Camera cameras;
     [SerializeField] ParticleSystem particula;
     [SerializeField] int maxAmmo = 6;
-    [SerializeField] int reloadTime;
+    [SerializeField] float reloadTime;
     Animator anima;
     float ammo;
     float nextTimeToFire = 0f;
@@ -24,8 +24,7 @@ public class RevolverScript : MonoBehaviour
     private void Start()
     {
         ammo = maxAmmo;
-        GetComponent<Animator>();
-
+        anima = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -35,25 +34,38 @@ public class RevolverScript : MonoBehaviour
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
         {
+            //kaue som de reload aqui
             StartCoroutine(Reload());
             return;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
         {
+            //kaue som de tiro aqui
 
+            anima.SetBool("atirando", true);
+            StartCoroutine(Tiro());
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+            
         }
         
 
     }
     IEnumerator Reload()
     {
+        anima.SetBool("recaregando", true);
         isReloading = true;
         Debug.Log("Reloading...");
         yield return new WaitForSeconds(reloadTime);
         ammo = maxAmmo;
         isReloading = false;
+        anima.SetBool("recaregando", false);
+    }
+
+    IEnumerator Tiro()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anima.SetBool("atirando", false);
     }
     void Shoot ()
     {
@@ -73,6 +85,10 @@ public class RevolverScript : MonoBehaviour
             }
         }
 
-       
+
+
+
     }
+
+
 }
