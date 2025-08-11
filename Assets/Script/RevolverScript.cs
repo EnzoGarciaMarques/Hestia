@@ -12,6 +12,7 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] ParticleSystem particula;
     [SerializeField] int maxAmmo = 6;
     [SerializeField] int reloadTime;
+    Animator anima;
     float ammo;
     float nextTimeToFire = 0f;
     bool isReloading;
@@ -23,6 +24,7 @@ public class RevolverScript : MonoBehaviour
     private void Start()
     {
         ammo = maxAmmo;
+        GetComponent<Animator>();
 
     }
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class RevolverScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
         {
+
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
@@ -69,6 +72,7 @@ public class RevolverScript : MonoBehaviour
                 
             }
         }
+
        
     }
 }
