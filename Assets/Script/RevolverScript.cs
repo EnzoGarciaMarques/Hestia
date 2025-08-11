@@ -34,7 +34,6 @@ public class RevolverScript : MonoBehaviour
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
         {
-            //kaue som de reload aqui
             StartCoroutine(Reload());
             return;
         }
@@ -53,6 +52,8 @@ public class RevolverScript : MonoBehaviour
     }
     IEnumerator Reload()
     {
+        //kaue som de reload aqui
+
         anima.SetBool("recaregando", true);
         isReloading = true;
         Debug.Log("Reloading...");
