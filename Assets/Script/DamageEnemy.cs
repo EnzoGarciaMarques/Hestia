@@ -13,13 +13,18 @@ public class DamageEnemy : MonoBehaviour
     bool flameOn;
     [SerializeField] FireBall fire;
     SwordScript Sword;
+    Animator anima;
+    MeleeEnemy mele;
+
 
     private void Awake()
     {
         health = health + upgradePerLvl * level;
+        anima = GetComponent<Animator>();
     }
     public void TakeDamage(float amount)
     {
+        StartCoroutine(TomouDano());
         if (fire.amplifier == true)
         {
             health -= amount*2;
@@ -48,6 +53,15 @@ public class DamageEnemy : MonoBehaviour
         yield return new WaitForSeconds(flametime);
         TakeDamage(fire.damage);
         flameOn = false;
+    }
+
+    IEnumerator TomouDano()
+    {
+        mele.dano = true;
+        anima.SetBool("dano", true);
+        yield return new WaitForSeconds(3f);
+        anima.SetBool("dano", false);
+        mele.dano = false;
     }
 
     private void OnTriggerEnter(Collider other)
