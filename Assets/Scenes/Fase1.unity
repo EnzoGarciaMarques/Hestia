@@ -5279,6 +5279,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2792127729466799044, guid: c40659611369b5443902f78d4b200b6f, type: 3}
   m_PrefabInstance: {fileID: 2445839161243756468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021441050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8007184085542876078, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+  m_PrefabInstance: {fileID: 1865800603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046098828
 GameObject:
   m_ObjectHideFlags: 0
@@ -8238,6 +8249,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596575612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8007184085542876078, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+  m_PrefabInstance: {fileID: 4818219380469424664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1608893284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9036,6 +9058,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+      propertyPath: dano
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+      propertyPath: mele
+      value: 
+      objectReference: {fileID: 1021441050}
     - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
       propertyPath: speed
       value: 5
@@ -12065,6 +12095,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+      propertyPath: mele
+      value: 
+      objectReference: {fileID: 1596575612}
     - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
       propertyPath: speed
       value: 5

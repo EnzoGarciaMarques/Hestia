@@ -11,7 +11,8 @@ public class MeleeEnemy : MonoBehaviour
     private GameObject player;
     Animator anim;
     bool ice = false;
-    public bool dano = false;
+    
+    public DamageEnemy mele;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,35 +24,35 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(dano);
-        if (ice == false || dano == false) {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-            Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
-            if (!atacking)
+        if (mele.dano == false) 
+        {
+            if (ice == false)
             {
-                if (distance < meleeRange)
+                float distance = Vector3.Distance(transform.position, player.transform.position);
+                Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
+                if (!atacking)
                 {
-                    timer += Time.deltaTime;
-                    if (timer > 1)
+                    if (distance < meleeRange)
                     {
-                        timer = 0;
-                        StartCoroutine(Punch());
+                        timer += Time.deltaTime;
+                        if (timer > 1)
+                        {
+                            timer = 0;
+                            StartCoroutine(Punch());
+
+                        }
+                    }
+                    else
+                    {
+                        Vector3 direction = (player.transform.position - transform.position).normalized;
+                        transform.position += direction * speed * Time.deltaTime;
+                        anim.SetBool("Batendo", false);
+
 
                     }
                 }
-                else
-                {
-                    Vector3 direction = (player.transform.position - transform.position).normalized;
-                    transform.position += direction * speed * Time.deltaTime;
-                    anim.SetBool("Batendo", false);
-
-
-                }
             }
-        }
-        
-
-        
+        } 
     }
 
 

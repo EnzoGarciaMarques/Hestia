@@ -14,7 +14,7 @@ public class DamageEnemy : MonoBehaviour
     [SerializeField] FireBall fire;
     SwordScript Sword;
     Animator anima;
-    MeleeEnemy mele;
+    public bool dano = false;
 
 
     private void Awake()
@@ -24,14 +24,16 @@ public class DamageEnemy : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        StartCoroutine(TomouDano());
-        if (fire.amplifier == true)
-        {
-            health -= amount*2;
-        }
-        else
-        {
-            health -= amount;
+        if (dano == false) {
+            if (fire.amplifier == true)
+            {
+                health -= amount * 2;
+            }
+            else
+            {
+                health -= amount;
+            }
+            StartCoroutine(TomouDano());
         }
 
     }
@@ -57,11 +59,11 @@ public class DamageEnemy : MonoBehaviour
 
     IEnumerator TomouDano()
     {
-        mele.dano = true;
+        dano = true;
         anima.SetBool("dano", true);
         yield return new WaitForSeconds(3f);
         anima.SetBool("dano", false);
-        mele.dano = false;
+        dano = false;
     }
 
     private void OnTriggerEnter(Collider other)
