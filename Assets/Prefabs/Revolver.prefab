@@ -4964,6 +4964,8 @@ MonoBehaviour:
   particula: {fileID: 6649389536119012184}
   maxAmmo: 6
   reloadTime: 0
+  shotClip: {fileID: 8300000, guid: 391a6cb2346a23042b13afdbfbc39ae1, type: 3}
+  reloadClip: {fileID: 8300000, guid: dd68329b069005541bf9806097b56465, type: 3}
   text: {fileID: 0}
 --- !u!114 &593278315369513946
 MonoBehaviour:

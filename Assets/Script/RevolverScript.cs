@@ -12,6 +12,9 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] ParticleSystem particula;
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
+
+    [SerializeField] AudioClip shotClip;
+    [SerializeField] AudioClip reloadClip;
     Animator anima;
     float ammo;
     float nextTimeToFire = 0f;
@@ -40,6 +43,7 @@ public class RevolverScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
         {
             //kaue som de tiro aqui
+            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
 
             anima.SetBool("atirando", true);
             StartCoroutine(Tiro());
@@ -53,6 +57,7 @@ public class RevolverScript : MonoBehaviour
     IEnumerator Reload()
     {
         //kaue som de reload aqui
+        SFXManager.Instance.PlaySoundFXClip(reloadClip, transform, 1f);
 
         anima.SetBool("recaregando", true);
         isReloading = true;
