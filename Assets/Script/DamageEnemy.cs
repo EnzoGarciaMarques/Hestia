@@ -15,6 +15,7 @@ public class DamageEnemy : MonoBehaviour
     SwordScript Sword;
     Animator anima;
     public bool dano = false;
+    public bool morto = false;
 
 
     private void Awake()
@@ -22,6 +23,7 @@ public class DamageEnemy : MonoBehaviour
         health = health + upgradePerLvl * level;
         anima = GetComponent<Animator>();
     }
+   
     public void TakeDamage(float amount)
     {
         if (dano == false) {
@@ -46,7 +48,9 @@ public class DamageEnemy : MonoBehaviour
         }
         if (health <= 0)
         {
-            Destroy(gameObject);
+            anima.SetBool("dano", false);
+            anima.SetBool("morte", true);
+            morto = true;
         }
     }
     IEnumerator Flametime()
@@ -61,7 +65,7 @@ public class DamageEnemy : MonoBehaviour
     {
         dano = true;
         anima.SetBool("dano", true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.2f);
         anima.SetBool("dano", false);
         dano = false;
     }

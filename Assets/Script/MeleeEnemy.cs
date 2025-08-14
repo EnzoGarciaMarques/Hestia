@@ -24,37 +24,41 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mele.dano == false) 
+        if (mele.morto == false)
         {
-            if (ice == false)
+
+
+            if (mele.dano == false)
             {
-                float distance = Vector3.Distance(transform.position, player.transform.position);
-                Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
-                if (!atacking)
+                if (ice == false)
                 {
-                    if (distance < meleeRange)
+                    float distance = Vector3.Distance(transform.position, player.transform.position);
+                    Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
+                    if (!atacking)
                     {
-                        timer += Time.deltaTime;
-                        if (timer > 1)
+                        if (distance < meleeRange)
                         {
-                            timer = 0;
-                            StartCoroutine(Punch());
+                            timer += Time.deltaTime;
+                            if (timer > 1)
+                            {
+                                timer = 0;
+                                StartCoroutine(Punch());
+
+                            }
+                        }
+                        else
+                        {
+                            Vector3 direction = (player.transform.position - transform.position).normalized;
+                            transform.position += direction * speed * Time.deltaTime;
+                            anim.SetBool("Batendo", false);
+
 
                         }
                     }
-                    else
-                    {
-                        Vector3 direction = (player.transform.position - transform.position).normalized;
-                        transform.position += direction * speed * Time.deltaTime;
-                        anim.SetBool("Batendo", false);
-
-
-                    }
                 }
             }
-        } 
+        }
     }
-
 
     IEnumerator Punch()
     {
