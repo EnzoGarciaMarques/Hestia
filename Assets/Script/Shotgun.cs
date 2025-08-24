@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class RevolverScript : MonoBehaviour
+public class Shotgun : MonoBehaviour
 {
     [SerializeField] float dano;
     [SerializeField] float range;
@@ -33,7 +33,7 @@ public class RevolverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            text.text = "6/" + ammo;
+        text.text = "2/" + ammo;
         if (isReloading)
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
@@ -50,9 +50,9 @@ public class RevolverScript : MonoBehaviour
             StartCoroutine(Tiro());
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
-            
+
         }
-        
+
 
     }
     IEnumerator Reload()
@@ -74,21 +74,58 @@ public class RevolverScript : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         anima.SetBool("atirando", false);
     }
-    void Shoot ()
+    void Shoot()
     {
         ammo--;
         particula.Play();
         RaycastHit hit;
+        RaycastHit hit2;
+        RaycastHit hit3;
+        RaycastHit hit4;
+        RaycastHit hit5;
         if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
         {
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
             {
-                    damage.TakeDamage(dano);  
+                damage.TakeDamage(dano);
+            }
+        }
+        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward+new Vector3(.2f, 0f, 0f), out hit2, range))
+        {
+            DamageEnemy damage = hit2.transform.GetComponent<DamageEnemy>();
+            if (damage != null)
+            {
+                damage.TakeDamage(dano);
+            }
+        }
+        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(-.2f, 0f, 0f), out hit3, range))
+        {
+            DamageEnemy damage = hit3.transform.GetComponent<DamageEnemy>();
+            if (damage != null)
+            {
+                damage.TakeDamage(dano);
+            }
+        }
+        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(0f, .2f, 0f), out hit4, range))
+        {
+            DamageEnemy damage = hit4.transform.GetComponent<DamageEnemy>();
+            if (damage != null)
+            {
+                damage.TakeDamage(dano);
+            }
+        }
+        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(0f, -.2f, 0f), out hit5, range))
+        {
+            DamageEnemy damage = hit5.transform.GetComponent<DamageEnemy>();
+            if (damage != null)
+            {
+                damage.TakeDamage(dano);
             }
         }
 
+
+
+
     }
-
-
 }

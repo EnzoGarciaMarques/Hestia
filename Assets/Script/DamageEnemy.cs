@@ -16,12 +16,15 @@ public class DamageEnemy : MonoBehaviour
     Animator anima;
     public bool dano = false;
     public bool morto = false;
-
+    Collider collide;
+    Rigidbody rigid;
 
     private void Awake()
     {
         health = health + upgradePerLvl * level;
         anima = GetComponent<Animator>();
+        collide = GetComponent<Collider>();
+        rigid = GetComponent<Rigidbody>();
     }
    
     public void TakeDamage(float amount)
@@ -51,6 +54,11 @@ public class DamageEnemy : MonoBehaviour
             anima.SetBool("dano", false);
             anima.SetBool("morte", true);
             morto = true;
+        }
+        if (morto == true) 
+        {
+            collide.enabled = false;
+            rigid.useGravity = false;
         }
     }
     IEnumerator Flametime()

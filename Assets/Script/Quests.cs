@@ -6,6 +6,7 @@ public class Quests : MonoBehaviour
     public bool getQuest = false;
     public bool questCompleted = false;
     public int carrots;
+    public bool firstTime = true;
     void Start()
     {
         

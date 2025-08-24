@@ -2181,7 +2181,7 @@ Transform:
   m_GameObject: {fileID: 317588940}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -9.621, y: 2.59, z: 24.28}
+  m_LocalPosition: {x: -9.621, y: 2.5, z: 24.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3108,13 +3108,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658041950}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.42226553, y: -0.4207133, z: 0.017263828, w: 0.8027417}
+  m_LocalPosition: {x: -8.28, y: 17.15, z: 14.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 43.826, y: -66.352, z: -27.005}
 --- !u!114 &658041953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9276,6 +9276,10 @@ PrefabInstance:
     - target: {fileID: 4220689984547057404, guid: 90c727886aabb984982f645cb9997a06, type: 3}
       propertyPath: meleeRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341517010872059714, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5834299736252023390, guid: 90c727886aabb984982f645cb9997a06, type: 3}
       propertyPath: m_IsTrigger

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Vector3 currentRotation = transform.eulerAngles;
+        transform.eulerAngles = new Vector3(30f, 90f, 0f);
         controller = GetComponent<CharacterController>();
     }
 

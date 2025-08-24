@@ -26,8 +26,6 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (mele.morto == false)
         {
-
-
             if (mele.dano == false)
             {
                 if (ice == false)
