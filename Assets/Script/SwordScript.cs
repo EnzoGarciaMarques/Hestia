@@ -12,25 +12,21 @@ public class SwordScript : MonoBehaviour
 
     Camera cameras;
     [SerializeField] ParticleSystem particula;
-    [SerializeField] int maxAmmo = 6;
-    [SerializeField] float reloadTime;
 
     [SerializeField] AudioClip shotClip;
     [SerializeField] AudioClip reloadClip;
     Animator anima;
-    float ammo;
     float nextTimeToFire = 0f;
-    bool isReloading;
     FireBall magic;
-
+    Collider collide;
 
     [SerializeField] TextMeshProUGUI text;
 
     private void Start()
     {
-        ammo = maxAmmo;
         anima = GetComponent<Animator>();
         cameras = Camera.main;
+        collide = GetComponent<Collider>();
     }
     // Update is called once per frame
     void Update()
@@ -43,32 +39,19 @@ public class SwordScript : MonoBehaviour
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
 
             anima.SetBool("atirando", true);
-            StartCoroutine(Tiro());
+            collide.enabled = true;
+            StartCoroutine(Attack());
             nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
 
         }
 
 
     }
 
-    IEnumerator Tiro()
+    IEnumerator Attack()
     {
         yield return new WaitForSeconds(0.2f);
         anima.SetBool("atirando", false);
-    }
-    void Shoot()
-    {
-        particula.Play();
-        RaycastHit hit;
-        //if (Physics.OverlapBox())
-        //{
-            //DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
-            //if (damage != null)
-            //{
-                //damage.TakeDamage(dano);
-            //}
-        //}
-
+        collide.enabled = false;
     }
 }

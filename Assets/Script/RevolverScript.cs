@@ -87,6 +87,15 @@ public class RevolverScript : MonoBehaviour
                     damage.TakeDamage(dano);  
             }
         }
+                if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
+        {
+            DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
+            if (damage != null)
+            {
+                    damage.TakeDamage(dano);  
+            }
+        }
+
 
     }
 

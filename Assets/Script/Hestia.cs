@@ -28,6 +28,12 @@ public class Hestia : Interactable
     // Update is called once per frame
     void Update()
     {
+        if (quests.firstTime)
+        {
+            mouseMovement.enabled = true;
+            playerMovement.enabled = true;
+            
+        }
 
         if (dialogo == 1)
         {
