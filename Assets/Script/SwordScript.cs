@@ -25,15 +25,14 @@ public class SwordScript : MonoBehaviour
     private void Start()
     {
         anima = GetComponent<Animator>();
-        cameras = Camera.main;
         collide = GetComponent<Collider>();
     }
     // Update is called once per frame
     void Update()
     {
         
-        text.text = "Infinite";
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
+        text.text = "";
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
         {
             //kaue som de tiro aqui
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);

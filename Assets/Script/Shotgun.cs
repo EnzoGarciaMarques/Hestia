@@ -13,11 +13,10 @@ public class Shotgun : MonoBehaviour
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
 
-    [SerializeField] AudioClip shotClip;
-    [SerializeField] AudioClip reloadClip;
+
     Animator anima;
     float ammo;
-    float nextTimeToFire = 0f;
+    bool nextTimeToFire = true;
     bool isReloading;
     FireBall magic;
 
@@ -33,7 +32,7 @@ public class Shotgun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "2/" + ammo;
+        text.text = ammo + "";
         if (isReloading)
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
@@ -41,14 +40,13 @@ public class Shotgun : MonoBehaviour
             StartCoroutine(Reload());
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
         {
             //kaue som de tiro aqui
-            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
 
             anima.SetBool("atirando", true);
             StartCoroutine(Tiro());
-            nextTimeToFire = Time.time + 1f / fireRate;
+            nextTimeToFire = false;
             Shoot();
 
         }
@@ -58,7 +56,6 @@ public class Shotgun : MonoBehaviour
     IEnumerator Reload()
     {
         //kaue som de reload aqui
-        SFXManager.Instance.PlaySoundFXClip(reloadClip, transform, 1f);
 
         anima.SetBool("recaregando", true);
         isReloading = true;
@@ -73,6 +70,7 @@ public class Shotgun : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         anima.SetBool("atirando", false);
+        nextTimeToFire = true;  
     }
     void Shoot()
     {
