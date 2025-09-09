@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -35,10 +35,15 @@ public class Shotgun : MonoBehaviour
         text.text = ammo + "";
         if (isReloading)
             return;
-        if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !anima.GetBool("atirando"))
         {
             StartCoroutine(Reload());
             return;
+        }
+
+        if(ammo <= 0)
+        {
+            StartCoroutine (Reloadtiro());
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
         {
@@ -57,18 +62,31 @@ public class Shotgun : MonoBehaviour
     {
         //kaue som de reload aqui
 
-        anima.SetBool("recaregando", true);
+        anima.SetBool("recarregando", true);
         isReloading = true;
         Debug.Log("Reloading...");
         yield return new WaitForSeconds(reloadTime);
         ammo = maxAmmo;
         isReloading = false;
-        anima.SetBool("recaregando", false);
+        anima.SetBool("recarregando", false);
+    }
+
+    IEnumerator Reloadtiro()
+    {
+        yield return new WaitForSeconds(reloadTime);
+        //kaue som de reload aqui
+        anima.SetBool("recarregando", true);
+        isReloading = true;
+        Debug.Log("Reloading...");
+        yield return new WaitForSeconds(reloadTime);
+        ammo = maxAmmo;
+        isReloading = false;
+        anima.SetBool("recarregando", false);
     }
 
     IEnumerator Tiro()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.29f);
         anima.SetBool("atirando", false);
         nextTimeToFire = true;  
     }

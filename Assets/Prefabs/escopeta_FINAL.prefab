@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8848835231468898985}
   - component: {fileID: 7067782649413243581}
   - component: {fileID: 7397347042349172367}
+  - component: {fileID: 6399838169667637633}
+  - component: {fileID: 3290956833418863551}
   m_Layer: 0
   m_Name: escopeta
   m_TagString: Untagged
@@ -87,6 +89,47 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6399838169667637633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354701135323734674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ecb5b1bc3d35cb46b3ebc94adc0413c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 5
+  range: 10
+  fireRate: 30
+  particula: {fileID: 0}
+  maxAmmo: 2
+  reloadTime: 0.27
+  text: {fileID: 0}
+--- !u!95 &3290956833418863551
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354701135323734674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8177f6259494f44caabd820c752378f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4187083015712307765
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +139,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985671791457947372}
-  - component: {fileID: 3183582589413934877}
   m_Layer: 0
   m_Name: escopeta_FINAL
   m_TagString: Untagged
@@ -112,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4187083015712307765}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99984866, z: -0, w: 0.017399183}
+  m_LocalRotation: {x: 0, y: -0.9998486, z: 0, w: 0.017400121}
   m_LocalPosition: {x: 0.5610008, y: 0.56240004, z: 2.3439999}
   m_LocalScale: {x: 0.22218, y: 0.177744, z: 0.22218}
   m_ConstrainProportionsScale: 0
@@ -120,24 +162,3 @@ Transform:
   - {fileID: 8848835231468898985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -178.006, z: 0}
---- !u!114 &3183582589413934877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187083015712307765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ecb5b1bc3d35cb46b3ebc94adc0413c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dano: 5
-  range: 10
-  fireRate: 30
-  particula: {fileID: 0}
-  maxAmmo: 2
-  reloadTime: 0
-  shotClip: {fileID: 0}
-  reloadClip: {fileID: 0}
-  text: {fileID: 3901331994491372298, guid: 25df7954601b2f042af64a0fd26b042e, type: 3}
