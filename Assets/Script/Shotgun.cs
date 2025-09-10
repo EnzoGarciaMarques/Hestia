@@ -9,7 +9,6 @@ public class Shotgun : MonoBehaviour
     [SerializeField] float fireRate;
 
     [SerializeField] Camera cameras;
-    [SerializeField] ParticleSystem particula;
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
 
@@ -92,7 +91,6 @@ public class Shotgun : MonoBehaviour
     void Shoot()
     {
         ammo--;
-        particula.Play();
         RaycastHit hit;
         RaycastHit hit2;
         RaycastHit hit3;

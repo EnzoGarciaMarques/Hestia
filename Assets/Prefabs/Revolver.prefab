@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.8002188, z: 0, w: 0.5997082}
   m_LocalPosition: {x: 0.5120001, y: 0.40099996, z: 0.25800002}
-  m_LocalScale: {x: 0.07500002, y: 0.06, z: 0.07500002}
+  m_LocalScale: {x: 0.075, y: 0.06, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,12 +126,12 @@ MonoBehaviour:
   dano: 10
   range: 100
   fireRate: 15
-  particula: {fileID: 0}
+  cameras: {fileID: 0}
   maxAmmo: 6
   reloadTime: 2
   shotClip: {fileID: 8300000, guid: 391a6cb2346a23042b13afdbfbc39ae1, type: 3}
   reloadClip: {fileID: 8300000, guid: dd68329b069005541bf9806097b56465, type: 3}
-  text: {fileID: 3901331994491372298, guid: 25df7954601b2f042af64a0fd26b042e, type: 3}
+  text: {fileID: 0}
 --- !u!95 &2676284767234175187
 Animator:
   serializedVersion: 7

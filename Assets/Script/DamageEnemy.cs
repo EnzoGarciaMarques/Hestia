@@ -23,7 +23,6 @@ public class DamageEnemy : MonoBehaviour
     {
         health = health + upgradePerLvl * level;
         anima = GetComponent<Animator>();
-        collide = GetComponent<Collider>();
         rigid = GetComponent<Rigidbody>();
     }
    
@@ -57,8 +56,8 @@ public class DamageEnemy : MonoBehaviour
         }
         if (morto == true) 
         {
-            collide.enabled = false;
-            rigid.useGravity = false;
+
+            rigid.useGravity = true;
         }
     }
     IEnumerator Flametime()

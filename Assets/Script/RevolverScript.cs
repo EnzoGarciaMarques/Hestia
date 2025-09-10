@@ -9,7 +9,7 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] float fireRate;
 
     [SerializeField] Camera cameras;
-    [SerializeField] ParticleSystem particula;
+
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
 
@@ -77,7 +77,6 @@ public class RevolverScript : MonoBehaviour
     void Shoot ()
     {
         ammo--;
-        particula.Play();
         RaycastHit hit;
         if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
         {
