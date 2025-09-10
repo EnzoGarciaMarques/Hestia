@@ -52,6 +52,7 @@ public class DamageEnemy : MonoBehaviour
         {
             anima.SetBool("dano", false);
             anima.SetBool("morte", true);
+            anima.SetTrigger("morreu");
             morto = true;
         }
         if (morto == true) 
@@ -69,7 +70,7 @@ public class DamageEnemy : MonoBehaviour
     }
 
     IEnumerator TomouDano()
-    {
+    {   
         dano = true;
         anima.SetBool("dano", true);
         yield return new WaitForSeconds(0.2f);
