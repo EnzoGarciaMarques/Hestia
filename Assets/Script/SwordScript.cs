@@ -30,7 +30,7 @@ public class SwordScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         text.text = "";
         if (Input.GetKey(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
         {
@@ -39,18 +39,14 @@ public class SwordScript : MonoBehaviour
 
             anima.SetBool("atirando", true);
             collide.enabled = true;
-            StartCoroutine(Attack());
-            nextTimeToFire = Time.time + 1f / fireRate;
+        }
+        else
+        {
+            anima.SetBool("atirando", false);
+            collide.enabled = false;
+
 
         }
-
-
     }
 
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(0.2f);
-        anima.SetBool("atirando", false);
-        collide.enabled = false;
-    }
 }

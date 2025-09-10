@@ -2363,6 +2363,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!20 &459871285 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2324044822772971141, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+  m_PrefabInstance: {fileID: 426472134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &539703359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6017,6 +6022,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1869683480}
+    - target: {fileID: 5337097790780901768, guid: 14522f8376edbf6428caf3b7f97f3b98, type: 3}
+      propertyPath: cameras
+      value: 
+      objectReference: {fileID: 459871285}
     - target: {fileID: 8967699018205932591, guid: 14522f8376edbf6428caf3b7f97f3b98, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.075
@@ -12279,6 +12288,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5834299736252023390, guid: 90c727886aabb984982f645cb9997a06, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007184085542876078, guid: 90c727886aabb984982f645cb9997a06, type: 3}
+      propertyPath: dano
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8007184085542876078, guid: 90c727886aabb984982f645cb9997a06, type: 3}

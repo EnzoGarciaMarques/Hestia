@@ -8,7 +8,7 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] float range;
     [SerializeField] float fireRate;
 
-    Camera cameras;
+    [SerializeField] Camera cameras;
     [SerializeField] ParticleSystem particula;
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
@@ -28,7 +28,6 @@ public class RevolverScript : MonoBehaviour
     {
         ammo = maxAmmo;
         anima = GetComponent<Animator>();
-        cameras = Camera.main;
     }
     // Update is called once per frame
     void Update()
