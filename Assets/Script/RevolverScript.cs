@@ -32,7 +32,7 @@ public class RevolverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            text.text = ammo + "";
+            text.text = ammo.ToString();
         if (isReloading)
             return;
         if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
@@ -43,7 +43,7 @@ public class RevolverScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
         {
             //kaue som de tiro aqui
-            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 0.5f);
+            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 0.2f);
 
             anima.SetBool("atirando", true);
             StartCoroutine(Tiro());
@@ -57,7 +57,7 @@ public class RevolverScript : MonoBehaviour
     IEnumerator Reload()
     {
         //kaue som de reload aqui
-        SFXManager.Instance.PlaySoundFXClip(reloadClip, transform, 0.5f);
+        SFXManager.Instance.PlaySoundFXClip(reloadClip, transform, 0.2f);
 
         anima.SetBool("recaregando", true);
         isReloading = true;

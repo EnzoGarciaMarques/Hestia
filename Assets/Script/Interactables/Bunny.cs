@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,11 +15,15 @@ public class Bunny : Interactable
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] Quests quests;
     private string prompt;
-
+    [SerializeField] AudioClip canto;
+    [SerializeField] AudioClip risada;
+    AudioClip clip;
+    bool cantando;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         prompt = promptMessage;
+        clip = canto;
     }
 
     // Update is called once per frame
@@ -31,6 +36,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 1)
         {
+            clip = risada;
             chat.text = texto1;
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -47,6 +53,7 @@ public class Bunny : Interactable
             mouseMovement.enabled = true;
             playerMovement.enabled = true;
             promptMessage = prompt;
+            clip = canto;
         }
     }
     protected override void Interact()
@@ -54,5 +61,6 @@ public class Bunny : Interactable
         dialogo += 1;
         quests.getQuest = true;
     }
+
 
 }

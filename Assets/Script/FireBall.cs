@@ -16,6 +16,10 @@ public class FireBall : MonoBehaviour
     [SerializeField] float upgradePerLevel;
     public int magic = 0;
     public bool amplifier = false;
+    [SerializeField] AudioClip attack1;
+    [SerializeField] AudioClip attack2;
+    [SerializeField] AudioClip attack3;
+
     void Start()
     {
         damage = damage + upgradePerLevel * level;
@@ -35,6 +39,7 @@ public class FireBall : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 3)
         {
             StartCoroutine(Amplifier());
+            SFXManager.Instance.PlaySoundFXClip(attack3, transform, 1f);
         }
     }
     IEnumerator Fire()

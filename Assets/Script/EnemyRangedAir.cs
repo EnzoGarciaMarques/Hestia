@@ -12,9 +12,13 @@ public class EnemyRangedAir : MonoBehaviour
     private GameObject player;
     bool ice = false;
     Animator anim;
+    public DamageEnemy mele;
+    [SerializeField] AudioClip attack;
+    SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         anim = GetComponent<Animator>();
         
@@ -23,40 +27,45 @@ public class EnemyRangedAir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ice == false) {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-
-            // If within shooting range, shoot at intervals
-            if (distance < shootingRange)
+        if (mele.morto == false)
+        {
+            if (mele.dano == false)
             {
-                timer += Time.deltaTime;
-                if (timer > 2)
+                if (ice == false)
                 {
-                    timer = 0;
-                    shoot();
+                    float distance = Vector3.Distance(transform.position, player.transform.position);
+
+                    // If within shooting range, shoot at intervals
+                    if (distance < shootingRange)
+                    {
+                        timer += Time.deltaTime;
+                        if (timer > 2)
+                        {
+                            timer = 0;
+                            SFXManager.Instance.PlaySoundFXClip(attack, transform, 1f);
+                            shoot();
+                        }
+
+
+
+
+                    }
+                    else
+                    {
+                        Vector3 direction = (player.transform.position - transform.position).normalized;
+                        transform.position += direction * speed * Time.deltaTime;
+
+
+                    }
                 }
-
-
-
-
             }
-            else
-            {
-                Vector3 direction = (player.transform.position - transform.position).normalized;
-                transform.position += direction * speed * Time.deltaTime;
-
-
-            }
-
-
         }
-        
+
     }
     
     void shoot()
     {
         anim.SetBool("ataque", true);
-
         Instantiate(Bala, Balapos.position, Quaternion.identity);
     }
     private void OnTriggerEnter(Collider other)
@@ -69,8 +78,10 @@ public class EnemyRangedAir : MonoBehaviour
     }
     IEnumerator Freeze()
     {
+        spriteRenderer.color = Color.blue;
         ice = true;
         yield return new WaitForSeconds(2);
         ice = false;
+        spriteRenderer.color = Color.white;
     }
 }

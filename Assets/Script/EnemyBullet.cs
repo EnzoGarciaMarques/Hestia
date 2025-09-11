@@ -39,10 +39,6 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     // Update is called once per frame

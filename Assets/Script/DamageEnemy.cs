@@ -9,7 +9,7 @@ public class DamageEnemy : MonoBehaviour
     [SerializeField] float health;
     public int level = 0;
     [SerializeField] float upgradePerLvl;
-    [SerializeField] float flametime;
+    [SerializeField] float flame;
     bool flameOn;
     [SerializeField] FireBall fire;
     SwordScript Sword;
@@ -20,9 +20,12 @@ public class DamageEnemy : MonoBehaviour
     Rigidbody rigid;
     [SerializeField] AudioClip soundDano;
     [SerializeField] AudioClip soundMorte;
+    SpriteRenderer spriteRenderer;
+
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         health = health + upgradePerLvl * level;
         anima = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
@@ -33,7 +36,7 @@ public class DamageEnemy : MonoBehaviour
         
         print($"{this.gameObject.name} tomou dano");
         if (dano == false && morto == false) {
-            SFXManager.Instance.PlaySoundFXClip(soundDano, transform, 9f);
+            SFXManager.Instance.PlaySoundFXClip(soundDano, transform, 1f);
             if (fire.amplifier == true)
             {
                 health -= amount * 2;
@@ -46,6 +49,8 @@ public class DamageEnemy : MonoBehaviour
         }
 
     }
+
+    int bla = 1;
     private void Update()
     {
         if (flameOn)
@@ -60,19 +65,19 @@ public class DamageEnemy : MonoBehaviour
             anima.SetTrigger("morreu");
             SFXManager.Instance.PlaySoundFXClip(soundMorte, transform, 25f);
             morto = true;
-        }
-        if (morto == true) 
-        {
-
-            rigid.useGravity = true;
+            Destroy(gameObject, 2f);
         }
     }
     IEnumerator Flametime()
     {
-        TakeDamage(fire.damage);
-        yield return new WaitForSeconds(flametime);
-        TakeDamage(fire.damage);
+       
         flameOn = false;
+        spriteRenderer.color = Color.red;
+        TakeDamage(fire.damage);
+        yield return new WaitForSeconds(flame);
+        TakeDamage(fire.damage);
+        spriteRenderer.color = Color.white;
+
     }
 
     IEnumerator TomouDano()

@@ -8,6 +8,7 @@ public class Hestia : Interactable
     [SerializeField] float dialogo = 1;
     [SerializeField] string texto1;
     [SerializeField] string texto2;
+    [SerializeField] string textoFirstTime;
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] Quests quests;
@@ -19,21 +20,16 @@ public class Hestia : Interactable
         prompt = promptMessage;
         if (quests.firstTime) 
         {
-            Interact();
-            quests.firstTime = false;
-        
+
+            chat.text = textoFirstTime;
+            promptMessage = "";
+
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (quests.firstTime)
-        {
-            mouseMovement.enabled = true;
-            playerMovement.enabled = true;
-            
-        }
 
         if (dialogo == 1)
         {
@@ -41,6 +37,7 @@ public class Hestia : Interactable
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
+            quests.firstTime = false;
         }
         if (dialogo == 2)
         {

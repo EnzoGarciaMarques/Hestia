@@ -31,7 +31,7 @@ public class Shotgun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = ammo + "";
+        text.text = ammo.ToString();
         if (isReloading)
             return;
         if (Input.GetKeyDown(KeyCode.R) && !anima.GetBool("atirando"))

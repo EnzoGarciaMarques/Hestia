@@ -11,11 +11,15 @@ public class MeleeEnemy : MonoBehaviour
     private GameObject player;
     Animator anim;
     bool ice = false;
-    
+    [SerializeField] AudioClip attack;
     public DamageEnemy mele;
+    SpriteRenderer spriteRenderer;
+    [SerializeField] float dano;
+    [SerializeField] GameObject attackPos;
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player");
         anim = GetComponent<Animator>();
 
@@ -37,9 +41,10 @@ public class MeleeEnemy : MonoBehaviour
                         if (distance < meleeRange)
                         {
                             timer += Time.deltaTime;
-                            if (timer > 1)
+                            if (timer > 2)
                             {
                                 timer = 0;
+                                SFXManager.Instance.PlaySoundFXClip(attack, transform, 1f);
                                 StartCoroutine(Punch());
 
                             }
@@ -64,9 +69,14 @@ public class MeleeEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Batendo", true);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, lenghtAtack))
+        if (Physics.Raycast(attackPos.transform.position, attackPos.transform.forward, out hit, lenghtAtack))
         {
-            print("Pegou");
+            PlayerHealth damage = hit.transform.GetComponent<PlayerHealth>();
+            if (damage != null)
+            {
+                damage.DamageTaken(dano);
+            }
+
         }
         yield return new WaitForSeconds(0.5f);
         atacking = false;
@@ -81,8 +91,11 @@ public class MeleeEnemy : MonoBehaviour
     }
     IEnumerator Freeze()
     {
-        ice = true ;
+        spriteRenderer.color = Color.blue;
+        ice = true;
         yield return new WaitForSeconds(2);
-        ice = false ;
+        ice = false;
+        spriteRenderer.color = Color.white;
+
     }
 }
