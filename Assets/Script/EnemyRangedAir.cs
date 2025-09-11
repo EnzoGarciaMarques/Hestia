@@ -36,8 +36,7 @@ public class EnemyRangedAir : MonoBehaviour
                     shoot();
                 }
 
-                anim.SetBool("voando", false);
-                anim.SetBool("atirando", true);
+
 
 
             }
@@ -45,8 +44,7 @@ public class EnemyRangedAir : MonoBehaviour
             {
                 Vector3 direction = (player.transform.position - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;
-                anim.SetBool("voando", true);
-                anim.SetBool("atirando", false);
+
 
             }
 

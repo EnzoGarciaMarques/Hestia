@@ -18,6 +18,8 @@ public class DamageEnemy : MonoBehaviour
     public bool morto = false;
     Collider collide;
     Rigidbody rigid;
+    [SerializeField] AudioClip soundDano;
+    [SerializeField] AudioClip soundMorte;
 
     private void Awake()
     {
@@ -28,7 +30,10 @@ public class DamageEnemy : MonoBehaviour
    
     public void TakeDamage(float amount)
     {
-        if (dano == false) {
+        
+        print($"{this.gameObject.name} tomou dano");
+        if (dano == false && morto == false) {
+            SFXManager.Instance.PlaySoundFXClip(soundDano, transform, 9f);
             if (fire.amplifier == true)
             {
                 health -= amount * 2;
@@ -48,11 +53,12 @@ public class DamageEnemy : MonoBehaviour
             StartCoroutine(Flametime());
 
         }
-        if (health <= 0)
+
+        if (health <= 0 && !morto)
         {
             anima.SetBool("dano", false);
-            anima.SetBool("morte", true);
             anima.SetTrigger("morreu");
+            SFXManager.Instance.PlaySoundFXClip(soundMorte, transform, 25f);
             morto = true;
         }
         if (morto == true) 

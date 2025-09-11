@@ -12,7 +12,8 @@ public class Shotgun : MonoBehaviour
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
 
-
+    [SerializeField] AudioClip shotClip;
+    [SerializeField] AudioClip reloadClip;
     Animator anima;
     float ammo;
     bool nextTimeToFire = true;
@@ -46,7 +47,7 @@ public class Shotgun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
         {
             //kaue som de tiro aqui
-
+            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
             anima.SetBool("atirando", true);
             StartCoroutine(Tiro());
             nextTimeToFire = false;
@@ -59,7 +60,7 @@ public class Shotgun : MonoBehaviour
     IEnumerator Reload()
     {
         //kaue som de reload aqui
-
+        SFXManager.Instance.PlaySoundFXClip(reloadClip, transform, 1f);
         anima.SetBool("recarregando", true);
         isReloading = true;
         Debug.Log("Reloading...");
