@@ -11489,7 +11489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  shootingRange: 5
+  shootingRange: 20
   Bala: {fileID: 0}
   Balapos: {fileID: 0}
   y: 8
