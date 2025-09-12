@@ -53,7 +53,7 @@ public class FireBall : MonoBehaviour
     IEnumerator Ice()
     {
         onCooldown = true;
-        GameObject iceSpear = Instantiate(iceSpearPrefab, ejectFire.position, Quaternion.identity);
+        GameObject iceSpear = Instantiate(iceSpearPrefab, ejectFire.position, gameObject.transform.rotation);
         iceSpear.GetComponent<Rigidbody>().AddForce(ejectFire.forward.normalized * velocity, ForceMode.Impulse);
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;

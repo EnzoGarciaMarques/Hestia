@@ -27,11 +27,10 @@ public class EnemyAir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 voar = new Vector3(transform.position.x, y, transform.position.z);
+        transform.position = voar;
         if (mele.morto == false)
         {
-            Vector3 voar = new Vector3(transform.position.x, y, transform.position.z);
-            transform.position = voar;
             if (mele.dano == false)
             {
                 if (ice == false)
@@ -56,7 +55,6 @@ public class EnemyAir : MonoBehaviour
                     {
                         Vector3 direction = (player.transform.position - transform.position).normalized;
                         transform.position += direction * speed * Time.deltaTime;
-                        anim.SetBool("ataque", false);
                         anim.SetBool("voando", true);
                         anim.SetBool("atirando", false);
 

@@ -66,7 +66,7 @@ public class EnemyRangedAir : MonoBehaviour
     void shoot()
     {
         anim.SetBool("ataque", true);
-        Instantiate(Bala, Balapos.position, Quaternion.identity);
+        Instantiate(Bala, Balapos.position, transform.localRotation);
     }
     private void OnTriggerEnter(Collider other)
     {

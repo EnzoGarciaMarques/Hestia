@@ -149,11 +149,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 20
   level: 0
   upgradePerLvl: 0
-  flametime: 2
+  flame: 2
   fire: {fileID: 0}
+  dano: 0
+  morto: 0
+  soundDano: {fileID: 8300000, guid: 08aa13661a4d0d34aa7362145b79871c, type: 3}
+  soundMorte: {fileID: 8300000, guid: 97c67b7daa2ff69479895b1d4d701e7b, type: 3}
 --- !u!65 &8859553824269852680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -173,8 +177,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.837173, y: 13.473727, z: 0.19999759}
-  m_Center: {x: 0.03149186, y: -0.0472403, z: 0.0000012244693}
+  m_Size: {x: 11.837173, y: 13.473722, z: 1.6379086}
+  m_Center: {x: 0.031491682, y: -0.0472405, z: 0.119924575}
 --- !u!114 &6246063228746053813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,10 +191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ec1b5bf7f67ab4791c4a8c7e70ac10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   shootingRange: 10
   Bala: {fileID: 5842031046974321599, guid: 93e8d10a04aca484e99ae0fded7e7ac8, type: 3}
   Balapos: {fileID: 3283099504845962801}
+  mele: {fileID: 9217108562724567161}
+  attack: {fileID: 8300000, guid: e9c4c9bd4d8c3da4cb33d9dd55dba8f0, type: 3}
 --- !u!54 &4301386082356575748
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -50,7 +50,6 @@ public class DamageEnemy : MonoBehaviour
 
     }
 
-    int bla = 1;
     private void Update()
     {
         if (flameOn)

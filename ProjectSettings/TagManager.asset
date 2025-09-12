@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - Sword
   - ice
+  - EnemySlash
   layers:
   - Default
   - TransparentFX

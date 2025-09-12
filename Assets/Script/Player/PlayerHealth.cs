@@ -47,6 +47,10 @@ public class PlayerHealth : MonoBehaviour
         {
             DamageTaken(10);
         }
+        if (other.gameObject.CompareTag("EnemySlash"))
+        {
+            DamageTaken(10);
+        }
     } 
 
 }

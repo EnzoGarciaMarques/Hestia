@@ -15,7 +15,9 @@ public class MeleeEnemy : MonoBehaviour
     public DamageEnemy mele;
     SpriteRenderer spriteRenderer;
     [SerializeField] float dano;
-    [SerializeField] GameObject attackPos;
+    [SerializeField] Transform attackPos;
+    [SerializeField] Transform bate1;
+    [SerializeField] Transform bate2;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class MeleeEnemy : MonoBehaviour
                         if (distance < meleeRange)
                         {
                             timer += Time.deltaTime;
-                            if (timer > 2)
+                            if (timer > 1)
                             {
                                 timer = 0;
                                 SFXManager.Instance.PlaySoundFXClip(attack, transform, 1f);
@@ -53,7 +55,6 @@ public class MeleeEnemy : MonoBehaviour
                         {
                             Vector3 direction = (player.transform.position - transform.position).normalized;
                             transform.position += direction * speed * Time.deltaTime;
-                            anim.SetBool("Batendo", false);
 
 
                         }
@@ -68,17 +69,10 @@ public class MeleeEnemy : MonoBehaviour
         atacking = true;
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Batendo", true);
-        RaycastHit hit;
-        if (Physics.Raycast(attackPos.transform.position, attackPos.transform.forward, out hit, lenghtAtack))
-        {
-            PlayerHealth damage = hit.transform.GetComponent<PlayerHealth>();
-            if (damage != null)
-            {
-                damage.DamageTaken(dano);
-            }
-
-        }
+        attackPos.position = bate1.position;
         yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Batendo", false);
+        attackPos.position = bate2.position;
         atacking = false;
     }
     private void OnTriggerEnter(Collider other)
