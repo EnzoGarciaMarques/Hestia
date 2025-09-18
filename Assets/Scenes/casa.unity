@@ -5485,6 +5485,14 @@ PrefabInstance:
       propertyPath: promptText
       value: 
       objectReference: {fileID: 1522467165}
+    - target: {fileID: 7880199418343299272, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 712588907}
+    - target: {fileID: 7880199418343299272, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 2134631164}
     - target: {fileID: 9161454900461006617, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Enabled
       value: 0
