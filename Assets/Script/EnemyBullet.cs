@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float damageEnemy;
     private GameObject player;
     private Rigidbody rb;
     public float force;
     private float timer;
     public int level = 0;
-    [SerializeField] float upgradePerLevel;
-    Vector3 cameraDir;
 
     private void Awake()
     {
-        cameraDir = Camera.main.transform.forward;
-        cameraDir.z = 0;
 
-        transform.rotation = Quaternion.LookRotation(cameraDir);
     }
     // Start is called before the first frame update
     void Start()
@@ -46,7 +40,7 @@ public class EnemyBullet : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 4)
+        if (timer > 3)
         {
             Destroy(gameObject);
         }

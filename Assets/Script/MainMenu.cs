@@ -13,6 +13,11 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void Options()
+    {
+        painelMenu.SetActive(!painelMenu.activeSelf);
+    }
+
     public void Exit()
     {
         Application.Quit();

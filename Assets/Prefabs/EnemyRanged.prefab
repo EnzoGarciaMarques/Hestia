@@ -153,7 +153,7 @@ MonoBehaviour:
   level: 0
   upgradePerLvl: 0
   flame: 2
-  fire: {fileID: 0}
+  fire: {fileID: 332624613557121066, guid: 922120761379baf468f9b9dd6026c45f, type: 3}
   dano: 0
   morto: 0
   soundDano: {fileID: 8300000, guid: 08aa13661a4d0d34aa7362145b79871c, type: 3}
