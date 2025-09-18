@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FireBall : MonoBehaviour
@@ -12,17 +13,18 @@ public class FireBall : MonoBehaviour
     [SerializeField] float velocity;
     bool onCooldown = false;
     public float damage;
-    public int level = 0;
-    [SerializeField] float upgradePerLevel;
     public int magic = 0;
     public bool amplifier = false;
     [SerializeField] AudioClip attack1;
     [SerializeField] AudioClip attack2;
     [SerializeField] AudioClip attack3;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] int countdown;
+    float timer;
 
     void Start()
     {
-        damage = damage + upgradePerLevel * level;
+
     }
 
     // Update is called once per frame
@@ -30,31 +32,41 @@ public class FireBall : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 1)
         {
+            countdown = 6;
             StartCoroutine(Fire());
+
         }
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 2)
         {
+            countdown = 6;
             StartCoroutine(Ice());
+
         }
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 3)
         {
+            countdown = 6;
             StartCoroutine(Amplifier());
             SFXManager.Instance.PlaySoundFXClip(attack3, transform, 1f);
         }
+ 
     }
     IEnumerator Fire()
     {
         onCooldown = true;
+        StartCoroutine(Ui());
         GameObject fireBall = Instantiate(fireBallPrefab, ejectFire.position, Quaternion.identity);
         fireBall.GetComponent<Rigidbody>().AddForce(ejectFire.forward.normalized * velocity, ForceMode.Impulse);
+        Destroy(fireBall, 4f);
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
     }
     IEnumerator Ice()
     {
         onCooldown = true;
+        StartCoroutine(Ui());
         GameObject iceSpear = Instantiate(iceSpearPrefab, ejectFire.position, gameObject.transform.rotation);
         iceSpear.GetComponent<Rigidbody>().AddForce(ejectFire.forward.normalized * velocity, ForceMode.Impulse);
+        Destroy(iceSpear, 4f);
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
     }
@@ -63,9 +75,31 @@ public class FireBall : MonoBehaviour
         amplifier = true;
         yield return new WaitForSeconds(amplifierCooldown);
         amplifier = false;
+        StartCoroutine(Ui());
         onCooldown = true;
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
+    }
+    IEnumerator Ui()
+    {
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        countdown -= 1;
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        countdown -= 1;
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        countdown -= 1;
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        countdown -= 1;
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        countdown -= 1;
+        text.text = countdown.ToString();
+        yield return new WaitForSeconds(1);
+        text.text = "";
     }
     private void OnCollisionEnter(Collision collision)
     {

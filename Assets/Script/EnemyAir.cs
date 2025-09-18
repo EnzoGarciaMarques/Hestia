@@ -6,7 +6,6 @@ public class EnemyAir : MonoBehaviour
     public float speed = 7;
     public float shootingRange = 5f;
     public GameObject Bala;
-    public Transform Balapos;
     private float timer;
     private GameObject player;
     bool ice = false;
@@ -41,7 +40,7 @@ public class EnemyAir : MonoBehaviour
                     if (distance < shootingRange)
                     {
                         timer += Time.deltaTime;
-                        if (timer > 2)
+                        if (timer > 4)
                         {
                             timer = 0;
                             SFXManager.Instance.PlaySoundFXClip(attack, transform, 1f);
@@ -69,7 +68,7 @@ public class EnemyAir : MonoBehaviour
     void shoot()
     {
         anim.SetBool("ataque", true);
-        Instantiate(Bala, Balapos.position, Quaternion.identity);
+        Instantiate(Bala, transform.position, Quaternion.identity);
     }
     private void OnTriggerEnter(Collider other)
     {

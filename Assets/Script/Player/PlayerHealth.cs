@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void DamageTaken(float amount)
     {
+        health -= amount;
         Debug.Log("tomou");
         shakeDuration = 1;
 

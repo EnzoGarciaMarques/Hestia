@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MouseMovement : MonoBehaviour
 {
+    //[SerializeField] sensivity sense;
     [SerializeField] float mouseSensivity;
     [SerializeField] float topLimit = -90f;
     [SerializeField] float bottomLimit = 90f;
@@ -22,6 +23,7 @@ public class MouseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //mouseSensivity = sense.sense;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
 

@@ -17,5 +17,6 @@ public class CatchFire : Interactable
     protected override void Interact()
     {
         magic.magic = 1;
+        Destroy(gameObject);
     }
 }

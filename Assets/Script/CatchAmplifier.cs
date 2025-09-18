@@ -17,5 +17,6 @@ public class CatchAmplifier : Interactable
     protected override void Interact()
     {
         magic.magic = 3;
+        Destroy(gameObject);
     }
 }

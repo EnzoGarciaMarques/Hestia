@@ -35,7 +35,7 @@ public class RevolverScript : MonoBehaviour
             text.text = ammo.ToString();
         if (isReloading)
             return;
-        if (ammo <= 0 || Input.GetKeyDown(KeyCode.R))
+        if (ammo <= 0 || Input.GetKeyDown(KeyCode.R) && ammo < 6)
         {
             StartCoroutine(Reload());
             return;

@@ -7,11 +7,11 @@ public class Shotgun : MonoBehaviour
     [SerializeField] float dano;
     [SerializeField] float range;
     [SerializeField] float fireRate;
-
+    [SerializeField] float spread;
     [SerializeField] Camera cameras;
     [SerializeField] int maxAmmo = 6;
     [SerializeField] float reloadTime;
-
+    [SerializeField] float ammountShoot;
     [SerializeField] AudioClip shotClip;
     [SerializeField] AudioClip reloadClip;
     Animator anima;
@@ -19,6 +19,7 @@ public class Shotgun : MonoBehaviour
     bool nextTimeToFire = true;
     bool isReloading;
     FireBall magic;
+    //[SerializeField] Animator weaponUi;
 
 
     [SerializeField] TextMeshProUGUI text;
@@ -34,7 +35,7 @@ public class Shotgun : MonoBehaviour
         text.text = ammo.ToString();
         if (isReloading)
             return;
-        if (Input.GetKeyDown(KeyCode.R) && !anima.GetBool("atirando"))
+        if (Input.GetKeyDown(KeyCode.R) && !anima.GetBool("atirando") && ammo < 2)
         {
             StartCoroutine(Reload());
             return;
@@ -42,7 +43,7 @@ public class Shotgun : MonoBehaviour
 
         if(ammo <= 0)
         {
-            StartCoroutine (Reloadtiro());
+            StartCoroutine (Reload());
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
         {
@@ -70,18 +71,6 @@ public class Shotgun : MonoBehaviour
         anima.SetBool("recarregando", false);
     }
 
-    IEnumerator Reloadtiro()
-    {
-        yield return new WaitForSeconds(reloadTime);
-        //kaue som de reload aqui
-        anima.SetBool("recarregando", true);
-        isReloading = true;
-        Debug.Log("Reloading...");
-        yield return new WaitForSeconds(reloadTime);
-        ammo = maxAmmo;
-        isReloading = false;
-        anima.SetBool("recarregando", false);
-    }
 
     IEnumerator Tiro()
     {
@@ -92,12 +81,12 @@ public class Shotgun : MonoBehaviour
     void Shoot()
     {
         ammo--;
+        float x = Random.Range(-spread, spread);
+        float y = Random.Range(-spread, spread);
+        ammountShoot--;
         RaycastHit hit;
-        RaycastHit hit2;
-        RaycastHit hit3;
-        RaycastHit hit4;
-        RaycastHit hit5;
-        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
+        Vector3 direction = cameras.transform.forward + new Vector3(x, y, 0);
+        if (Physics.Raycast(cameras.transform.position, direction, out hit, range))
         {
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
@@ -105,41 +94,9 @@ public class Shotgun : MonoBehaviour
                 damage.TakeDamage(dano);
             }
         }
-        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward+new Vector3(.2f, 0f, 0f), out hit2, range))
+        if(ammountShoot > 0)
         {
-            DamageEnemy damage = hit2.transform.GetComponent<DamageEnemy>();
-            if (damage != null)
-            {
-                damage.TakeDamage(dano);
-            }
+            Shoot();
         }
-        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(-.2f, 0f, 0f), out hit3, range))
-        {
-            DamageEnemy damage = hit3.transform.GetComponent<DamageEnemy>();
-            if (damage != null)
-            {
-                damage.TakeDamage(dano);
-            }
-        }
-        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(0f, .2f, 0f), out hit4, range))
-        {
-            DamageEnemy damage = hit4.transform.GetComponent<DamageEnemy>();
-            if (damage != null)
-            {
-                damage.TakeDamage(dano);
-            }
-        }
-        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward + new Vector3(0f, -.2f, 0f), out hit5, range))
-        {
-            DamageEnemy damage = hit5.transform.GetComponent<DamageEnemy>();
-            if (damage != null)
-            {
-                damage.TakeDamage(dano);
-            }
-        }
-
-
-
-
     }
 }

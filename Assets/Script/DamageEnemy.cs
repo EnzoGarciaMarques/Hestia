@@ -7,7 +7,6 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     [SerializeField] float health;
-    public int level = 0;
     [SerializeField] float upgradePerLvl;
     [SerializeField] float flame;
     bool flameOn;
@@ -21,12 +20,12 @@ public class DamageEnemy : MonoBehaviour
     [SerializeField] AudioClip soundDano;
     [SerializeField] AudioClip soundMorte;
     SpriteRenderer spriteRenderer;
+    [SerializeField] ManagerLevel level;
 
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        health = health + upgradePerLvl * level;
         anima = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
     }
@@ -64,6 +63,7 @@ public class DamageEnemy : MonoBehaviour
             anima.SetTrigger("morreu");
             SFXManager.Instance.PlaySoundFXClip(soundMorte, transform, 25f);
             morto = true;
+            level.inimigos -= 1;
             Destroy(gameObject, 2f);
         }
     }
