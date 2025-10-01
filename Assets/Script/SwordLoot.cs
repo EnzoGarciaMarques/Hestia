@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SwordLoot : Interactable
 {
-    [SerializeField] WeaponManager _weaponManager;
+    
     void Start()
     {
 
@@ -15,7 +15,7 @@ public class SwordLoot : Interactable
     }
     protected override void Interact()
     {
-        _weaponManager.weapon = 3;
+        WeaponManager.instance.weapon = 3;
         Destroy(gameObject);
     }
 }

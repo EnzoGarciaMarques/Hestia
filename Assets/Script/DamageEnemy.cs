@@ -36,14 +36,7 @@ public class DamageEnemy : MonoBehaviour
         print($"{this.gameObject.name} tomou dano");
         if (dano == false && morto == false) {
             SFXManager.Instance.PlaySoundFXClip(soundDano, transform, 1f);
-            if (fire.amplifier == true)
-            {
-                health -= amount * 2;
-            }
-            else
-            {
-                health -= amount;
-            }
+            health -= amount;
             StartCoroutine(TomouDano());
         }
 
@@ -94,6 +87,10 @@ public class DamageEnemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             flameOn = true;
+        }
+        if (other.gameObject.CompareTag("Sword"))
+        {
+            TakeDamage(20);
         }
     }
 }

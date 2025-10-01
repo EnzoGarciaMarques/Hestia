@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] Quests quests;
     [SerializeField] float x;
     [SerializeField] float y;
     [SerializeField] float z;
@@ -11,7 +10,7 @@ public class Door : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (quests.rescue == true) 
+        if (Quests.instance.rescue == true) 
         {
             Vector3 aberto = new Vector3(x, y, z);
             transform.position = aberto;

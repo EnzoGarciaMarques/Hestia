@@ -7,6 +7,20 @@ public class Quests : MonoBehaviour
     public bool questCompleted = false;
     public int carrots;
     public bool firstTime = true;
+
+    public static Quests instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         

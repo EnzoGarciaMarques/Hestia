@@ -4,9 +4,8 @@ public class grenade : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody rb;
-    public float force;
+    [SerializeField] float force;
     private float timer;
-    public int level = 0;
     [SerializeField] GameObject explosion;
     [SerializeField] Vector3 radius;
     [SerializeField] float dano;
@@ -28,14 +27,6 @@ public class grenade : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +39,7 @@ public class grenade : MonoBehaviour
     }
     void Explode()
     {
-        Instantiate(explosion, transform.position, transform.rotation);
+        //Instantiate(explosion, transform.position, transform.rotation);
 
         Collider[] colliders = Physics.OverlapBox(transform.position, radius);
 
@@ -60,6 +51,6 @@ public class grenade : MonoBehaviour
                 damage.DamageTaken(dano);
             }
         }
-        Destroy(gameObject );
+        Destroy(gameObject);
     }
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Carrots : Interactable
 {
-    [SerializeField] Quests quests;
     void Start()
     {
         
@@ -15,6 +14,6 @@ public class Carrots : Interactable
     }
     protected override void Interact()
     {
-        quests.carrots += 1;
+        Quests.instance.carrots += 1;
     }
 }

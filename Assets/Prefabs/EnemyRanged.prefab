@@ -113,7 +113,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c8e6a1a81a8be2a4fbcb0be499de7197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -150,14 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  level: 0
   upgradePerLvl: 0
   flame: 2
-  fire: {fileID: 332624613557121066, guid: 922120761379baf468f9b9dd6026c45f, type: 3}
+  fire: {fileID: 0}
   dano: 0
   morto: 0
   soundDano: {fileID: 8300000, guid: 08aa13661a4d0d34aa7362145b79871c, type: 3}
   soundMorte: {fileID: 8300000, guid: 97c67b7daa2ff69479895b1d4d701e7b, type: 3}
+  level: {fileID: 0}
 --- !u!65 &8859553824269852680
 BoxCollider:
   m_ObjectHideFlags: 0

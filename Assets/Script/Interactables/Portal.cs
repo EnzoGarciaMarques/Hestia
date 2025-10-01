@@ -16,6 +16,6 @@ public class Portal : Interactable
     }
     protected override void Interact()
     {
-        SceneManager.LoadScene("Fase1");
+        SceneManager.LoadScene("corredor");
     }
 }

@@ -7,17 +7,10 @@ using UnityEngine;
 public class SwordScript : MonoBehaviour
 {
     [SerializeField] float dano;
-    [SerializeField] float range;
-    [SerializeField] float fireRate;
 
-    Camera cameras;
-    [SerializeField] ParticleSystem particula;
 
     [SerializeField] AudioClip shotClip;
-    [SerializeField] AudioClip reloadClip;
     Animator anima;
-    float nextTimeToFire = 0f;
-    FireBall magic;
     Collider collide;
 
     [SerializeField] TextMeshProUGUI text;
@@ -32,7 +25,7 @@ public class SwordScript : MonoBehaviour
     {
 
         text.text = "";
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time >= nextTimeToFire)
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             //kaue som de tiro aqui
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);

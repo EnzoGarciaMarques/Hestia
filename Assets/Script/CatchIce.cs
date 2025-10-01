@@ -15,7 +15,7 @@ public class CatchIce : Interactable
     }
     protected override void Interact()
     {
-        magic.magic = 2;
+        FireBall.instance.magic = 2;
         Destroy(gameObject);
     }
 }

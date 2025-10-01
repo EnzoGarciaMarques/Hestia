@@ -74,29 +74,21 @@ public class Shotgun : MonoBehaviour
 
     IEnumerator Tiro()
     {
-        yield return new WaitForSeconds(1.29f);
+        yield return new WaitForSeconds(2f);
         anima.SetBool("atirando", false);
         nextTimeToFire = true;  
     }
     void Shoot()
     {
         ammo--;
-        float x = Random.Range(-spread, spread);
-        float y = Random.Range(-spread, spread);
-        ammountShoot--;
         RaycastHit hit;
-        Vector3 direction = cameras.transform.forward + new Vector3(x, y, 0);
-        if (Physics.Raycast(cameras.transform.position, direction, out hit, range))
+        if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
         {
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
             {
                 damage.TakeDamage(dano);
             }
-        }
-        if(ammountShoot > 0)
-        {
-            Shoot();
         }
     }
 }

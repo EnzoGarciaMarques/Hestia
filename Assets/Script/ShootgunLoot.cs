@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShootgunLoot : Interactable
 {
-    [SerializeField] WeaponManager _weaponManager;
+    
     void Start()
     {
         
@@ -15,7 +15,7 @@ public class ShootgunLoot : Interactable
     }
     protected override void Interact()
     {
-        _weaponManager.weapon = 2;
+        WeaponManager.instance.weapon = 2;
         Destroy(gameObject);
     }
 }

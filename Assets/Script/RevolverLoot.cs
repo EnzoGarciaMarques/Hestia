@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RevolverLoot : Interactable
 {
-    [SerializeField] WeaponManager _weaponManager;
+    [SerializeField] PortaCorredor level;
     void Start()
     {
 
@@ -15,7 +15,8 @@ public class RevolverLoot : Interactable
     }
     protected override void Interact()
     {
-        _weaponManager.weapon = 1;
+        level.loot -= 1;
+        WeaponManager.instance.weapon = 1;
         Destroy(gameObject);
     }
 }

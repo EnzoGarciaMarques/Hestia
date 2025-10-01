@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14010f33bbc31c479d53df59d27af03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sense: {fileID: 0}
   mouseSensivity: 500
   topLimit: -90
   bottomLimit: 90
@@ -232,11 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc690cb164de1a04f8c3adfe6e938161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 6
   camTransform: {fileID: 201738293971974189}
   shakeDuration: 0
   shakeAmount: 0.1
   decreaseFactor: 10
+  life: {fileID: 0}
 --- !u!114 &4671382934026805329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +252,8 @@ MonoBehaviour:
   revolver: {fileID: 5500084713688055810}
   shotgun: {fileID: 1810794035874660364}
   sword: {fileID: 407202136429983487}
-  weapon: 1
+  armas: {fileID: 0}
+  weapon: 3
 --- !u!114 &2508532841354621102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,12 +274,13 @@ MonoBehaviour:
   velocity: 10
   damage: 10
   magic: 0
-  amplifier: 0
   attack1: {fileID: 0}
   attack2: {fileID: 0}
   attack3: {fileID: 8300000, guid: f815205148407534ab202e1084632003, type: 3}
   text: {fileID: 0}
   countdown: 0
+  magias: {fileID: 0}
+  health: {fileID: 2071338332315626604}
 --- !u!114 &7880199418343299272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
-  slider: {fileID: 0}
 --- !u!1 &3989282009545952617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,11 +5376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8967699018205932591, guid: 14522f8376edbf6428caf3b7f97f3b98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0.369
       objectReference: {fileID: 0}
     - target: {fileID: 8967699018205932591, guid: 14522f8376edbf6428caf3b7f97f3b98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0529995
+      value: 1.052999
       objectReference: {fileID: 0}
     - target: {fileID: 8967699018205932591, guid: 14522f8376edbf6428caf3b7f97f3b98, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5442,7 +5443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1466548945681662631, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466548945681662631, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
+      propertyPath: m_TagString
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 2889503699487302170, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_LocalScale.x
@@ -5495,6 +5500,10 @@ PrefabInstance:
     - target: {fileID: 2889503699487302170, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180.883
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822838185865583864, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
+      propertyPath: m_TagString
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 8215638662012241315, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5549,11 +5558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 20
-  range: 0
-  fireRate: 0
-  particula: {fileID: 0}
   shotClip: {fileID: 0}
-  reloadClip: {fileID: 0}
   text: {fileID: 0}
 --- !u!65 &6850282746913086941
 BoxCollider:

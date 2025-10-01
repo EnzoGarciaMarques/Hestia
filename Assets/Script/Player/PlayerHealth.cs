@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] float health;
+    public float health;
     public Transform camTransform;
 
 
@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public float decreaseFactor = 1.0f;
 
     Vector3 originalPos;
-
+    [SerializeField] Animator life;
 
     private void Start()
     {
@@ -23,6 +23,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
+        if (health > 6)
+        {
+            health = 6;
+        }
         if (shakeDuration > 0)
         {
             camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
@@ -34,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
             shakeDuration = 0f;
             camTransform.localPosition = originalPos;
         }
+        life.SetInteger("vida", (int)health);
     }
     public void DamageTaken(float amount)
     {
@@ -41,17 +46,27 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("tomou");
         shakeDuration = 1;
 
+        //if (health <= 0)
+        //{
+            //StartCoroutine(Morto());
+        //}
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
-            DamageTaken(10);
+            DamageTaken(1);
         }
         if (other.gameObject.CompareTag("EnemySlash"))
         {
-            DamageTaken(10);
+            DamageTaken(2);
         }
     } 
+
+    //IEnumerator Morto()
+    //{
+        //yield return new WaitForSeconds(3f);
+        //Destroy(gameObject);
+    //}
 
 }

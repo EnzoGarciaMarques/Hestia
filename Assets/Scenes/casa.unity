@@ -3793,7 +3793,6 @@ MonoBehaviour:
   textoFirstTime: venha aqui em baixo da lareira
   mouseMovement: {fileID: 345415237}
   playerMovement: {fileID: 345415236}
-  quests: {fileID: 952189829}
 --- !u!95 &1146896618
 Animator:
   serializedVersion: 7
@@ -5025,7 +5024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb90b8a5e2f2854c9767a58cb317730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: {fileID: 952189829}
   x: -27.22
   y: 17.56
   z: 253.25
@@ -5433,6 +5431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 407202136429983487, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: speed
       value: 50
@@ -5723,7 +5725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb90b8a5e2f2854c9767a58cb317730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: {fileID: 952189829}
   x: -28.42063
   y: 18.66229
   z: 246.706
@@ -6402,7 +6403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb90b8a5e2f2854c9767a58cb317730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: {fileID: 952189829}
   x: -30.42712
   y: 18.70161
   z: 247.5764

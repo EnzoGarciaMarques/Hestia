@@ -11,14 +11,13 @@ public class Hestia : Interactable
     [SerializeField] string textoFirstTime;
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] Quests quests;
     private string prompt;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         prompt = promptMessage;
-        if (quests.firstTime) 
+        if (Quests.instance.firstTime) 
         {
 
             chat.text = textoFirstTime;
@@ -37,7 +36,7 @@ public class Hestia : Interactable
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
-            quests.firstTime = false;
+            Quests.instance.firstTime = false;
         }
         if (dialogo == 2)
         {

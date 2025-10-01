@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CatchFire : Interactable
 {
-    [SerializeField] FireBall magic;
+
     void Start()
     {
 
@@ -16,7 +16,7 @@ public class CatchFire : Interactable
     }
     protected override void Interact()
     {
-        magic.magic = 1;
+        FireBall.instance.magic = 1;
         Destroy(gameObject);
     }
 }

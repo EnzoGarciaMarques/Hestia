@@ -13,15 +13,29 @@ public class FireBall : MonoBehaviour
     [SerializeField] float velocity;
     bool onCooldown = false;
     public float damage;
-    public int magic = 0;
-    public bool amplifier = false;
+    public float magic = 0;
     [SerializeField] AudioClip attack1;
     [SerializeField] AudioClip attack2;
     [SerializeField] AudioClip attack3;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] int countdown;
+    [SerializeField] Animator magias;
     float timer;
+    [SerializeField] PlayerHealth health;
 
+    public static FireBall instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
 
@@ -30,6 +44,15 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (magic == 0)
+        {
+            magias.gameObject.SetActive(false);
+        }
+        else 
+        {
+            magias.gameObject.SetActive(true);
+        }
+        magias.SetInteger("magia", (int)magic);
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 1)
         {
             countdown = 6;
@@ -72,9 +95,7 @@ public class FireBall : MonoBehaviour
     }
     IEnumerator Amplifier()
     {
-        amplifier = true;
-        yield return new WaitForSeconds(amplifierCooldown);
-        amplifier = false;
+        health.health += 2;
         StartCoroutine(Ui());
         onCooldown = true;
         yield return new WaitForSeconds(cooldown);
@@ -107,6 +128,10 @@ public class FireBall : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void takeMagic(float ammount)
+    {
+        magic = ammount;
     }
 
 }

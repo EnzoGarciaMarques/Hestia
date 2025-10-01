@@ -13,7 +13,6 @@ public class Bunny : Interactable
     [SerializeField] string texto2;
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] Quests quests;
     private string prompt;
     [SerializeField] AudioClip canto;
     [SerializeField] AudioClip risada;
@@ -29,7 +28,7 @@ public class Bunny : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (quests.questCompleted) 
+        if (Quests.instance.questCompleted) 
         {
             texto1 = "Brigado amigo!";
             texto2 = "vo faze o bolo";
@@ -59,7 +58,7 @@ public class Bunny : Interactable
     protected override void Interact()
     {
         dialogo += 1;
-        quests.getQuest = true;
+        Quests.instance.getQuest = true;
     }
 
 

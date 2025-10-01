@@ -23,10 +23,7 @@ public class MouseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 1)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        //mouseSensivity = sensivity.instance.sense;
         //mouseSensivity = sense.sense;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;

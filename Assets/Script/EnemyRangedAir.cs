@@ -66,7 +66,8 @@ public class EnemyRangedAir : MonoBehaviour
     void shoot()
     {
         anim.SetBool("ataque", true);
-        Instantiate(Bala, Balapos.position, transform.localRotation);
+        Quaternion direct = Quaternion.Euler(90, 0, transform.rotation.y); ;
+        Instantiate(Bala, Balapos.position, direct);
     }
     private void OnTriggerEnter(Collider other)
     {
