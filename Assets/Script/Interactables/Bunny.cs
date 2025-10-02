@@ -8,26 +8,29 @@ public class Bunny : Interactable
 {
     [SerializeField] TextMeshProUGUI chat;
 
-    [SerializeField] float dialogo = 1;
+    [SerializeField] float dialogo;
     [SerializeField] string texto1;
     [SerializeField] string texto2;
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
     private string prompt;
-    [SerializeField] AudioClip canto;
     [SerializeField] AudioClip risada;
+    [SerializeField] GameObject canto;
     AudioClip clip;
     bool cantando;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         prompt = promptMessage;
-        clip = canto;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Quests.instance.rescue)
+        {
+            canto.SetActive(true);
+        }
         if (Quests.instance.questCompleted) 
         {
             texto1 = "Brigado amigo!";
@@ -35,7 +38,6 @@ public class Bunny : Interactable
         }
         if (dialogo == 1)
         {
-            clip = risada;
             chat.text = texto1;
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -52,13 +54,13 @@ public class Bunny : Interactable
             mouseMovement.enabled = true;
             playerMovement.enabled = true;
             promptMessage = prompt;
-            clip = canto;
+            Quests.instance.getQuest = true;
         }
     }
     protected override void Interact()
     {
         dialogo += 1;
-        Quests.instance.getQuest = true;
+        SFXManager.Instance.PlaySoundFXClip(risada, transform, 1f);
     }
 
 

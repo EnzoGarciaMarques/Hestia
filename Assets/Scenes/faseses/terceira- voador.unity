@@ -22147,6 +22147,10 @@ PrefabInstance:
       propertyPath: fire
       value: 
       objectReference: {fileID: 2508532841354621102, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+    - target: {fileID: 2926456847365909507, guid: 1a511619b045d534586de20a2ef41552, type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 1877440939}
     - target: {fileID: 3741655513866399625, guid: 1a511619b045d534586de20a2ef41552, type: 3}
       propertyPath: m_LocalPosition.x
       value: -173.44
@@ -25494,7 +25498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8879562854988695400, guid: ad44868caa0c2d44fba2f3c45133cd81, type: 3}
       propertyPath: fase
-      value: tudo
+      value: todos
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

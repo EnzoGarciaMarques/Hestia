@@ -49,16 +49,17 @@ public class DamageEnemy : MonoBehaviour
             StartCoroutine(Flametime());
 
         }
-
         if (health <= 0 && !morto)
         {
             anima.SetBool("dano", false);
             anima.SetTrigger("morreu");
             SFXManager.Instance.PlaySoundFXClip(soundMorte, transform, 25f);
-            morto = true;
             level.inimigos -= 1;
+            morto = true;
             Destroy(gameObject, 2f);
         }
+
+
     }
     IEnumerator Flametime()
     {

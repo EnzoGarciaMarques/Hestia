@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
@@ -24,6 +25,10 @@ public class DontDestroy : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        
     }
 
 }

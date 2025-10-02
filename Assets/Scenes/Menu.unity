@@ -949,8 +949,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6944247313637852869, guid: 0b2a9eba4e48b824586a9a6099cadd55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 506018081}
   m_SourcePrefab: {fileID: 100100000, guid: 0b2a9eba4e48b824586a9a6099cadd55, type: 3}
+--- !u!1 &506018080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6944247313637852869, guid: 0b2a9eba4e48b824586a9a6099cadd55, type: 3}
+  m_PrefabInstance: {fileID: 506018079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &506018081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506018080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31e4e276d6157f40a236ed97cee1a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 
 --- !u!1 &541874294
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592651707}
   - component: {fileID: 1592651708}
+  - component: {fileID: 1592651709}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -3243,6 +3265,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1592651709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592651706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1268e907414704f45b4c3e20ef8a4e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 1592651708}
 --- !u!1 &1627884237
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,10 +13,9 @@ public class Pause : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PauseMenus();
-            //Cursor.lockState = CursorLockMode.Confined;
         }
     }
 
@@ -27,11 +26,12 @@ public class Pause : MonoBehaviour
         if (PauseMenu.activeSelf == true)
         {
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1f;
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void Continue()
