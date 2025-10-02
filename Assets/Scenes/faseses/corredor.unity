@@ -4466,9 +4466,25 @@ PrefabInstance:
       value: player 1
       objectReference: {fileID: 0}
     - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 1249105399}
+    - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: life
       value: 
       objectReference: {fileID: 842290849}
+    - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 258255691}
+    - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 273538337}
+    - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 470932080}
     - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: health
       value: 6
