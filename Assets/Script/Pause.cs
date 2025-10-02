@@ -36,7 +36,7 @@ public class Pause : MonoBehaviour
     }
     public void Continue()
     {
-        PauseMenu.SetActive(false);
+        PauseMenus();
     }
     public void Exit()
     {

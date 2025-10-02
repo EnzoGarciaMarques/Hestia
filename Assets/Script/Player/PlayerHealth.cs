@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float health;
     public Transform camTransform;
-
-
+    [SerializeField] MouseMovement mouseMovement;
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] private GameObject DeadMenu;
     public float shakeDuration = 0f;
 
     public float shakeAmount = 0.7f;
@@ -88,14 +90,16 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Morto()
     {
-        yield return new WaitForSeconds(3f);
+        mouseMovement.enabled = false;
+        playerMovement.enabled = false;
+        DeadMenu.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("casa");
         Destroy(gameObject);
         Destroy(canvas);
         Destroy(sound);
         Destroy(sfx);
         Destroy(music);
-
-        SceneManager.LoadScene("casa");
     }
 
 }

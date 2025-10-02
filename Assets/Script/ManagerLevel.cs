@@ -34,7 +34,15 @@ public class ManagerLevel : MonoBehaviour
         float nowLoot = Random.Range(1, 6);
         if (nowLoot == 1)
         {
-            loot = fire;
+            if (WeaponManager.instance.weapon != 1) 
+            {
+                loot = fire;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
+            
         }
         else if (nowLoot == 2)
         {

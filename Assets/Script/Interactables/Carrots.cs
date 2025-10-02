@@ -15,5 +15,6 @@ public class Carrots : Interactable
     protected override void Interact()
     {
         Quests.instance.carrots += 1;
+        Destroy(gameObject);
     }
 }

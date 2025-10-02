@@ -24,7 +24,6 @@ public class MouseMovement : MonoBehaviour
     void Update()
     {
         //mouseSensivity = sensivity.instance.sense;
-        //mouseSensivity = sense.sense;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
 

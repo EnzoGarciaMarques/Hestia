@@ -233,10 +233,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 6
   camTransform: {fileID: 201738293971974189}
+  mouseMovement: {fileID: 0}
+  playerMovement: {fileID: 0}
+  DeadMenu: {fileID: 0}
   shakeDuration: 0
   shakeAmount: 0.1
   decreaseFactor: 10
   life: {fileID: 0}
+  canvas: {fileID: 0}
+  music: {fileID: 0}
+  sfx: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!114 &4671382934026805329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +288,7 @@ MonoBehaviour:
   countdown: 0
   magias: {fileID: 0}
   health: {fileID: 2071338332315626604}
+  heal: 0
 --- !u!114 &7880199418343299272
 MonoBehaviour:
   m_ObjectHideFlags: 0

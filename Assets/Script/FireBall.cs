@@ -22,6 +22,7 @@ public class FireBall : MonoBehaviour
     [SerializeField] Animator magias;
     float timer;
     [SerializeField] PlayerHealth health;
+    [SerializeField] float heal;
 
     public static FireBall instance;
 
@@ -44,6 +45,10 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Quests.instance.questCompleted)
+        {
+            heal = 4;
+        }
         if (magic == 0)
         {
             magias.gameObject.SetActive(false);
@@ -95,7 +100,7 @@ public class FireBall : MonoBehaviour
     }
     IEnumerator Amplifier()
     {
-        health.health += 2;
+        health.health += heal;
         StartCoroutine(Ui());
         onCooldown = true;
         yield return new WaitForSeconds(cooldown);

@@ -1,4 +1,4 @@
-using UnityEditor.SearchService;
+using UnityEditor;
 using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
