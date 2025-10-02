@@ -9,7 +9,7 @@ public class grenade : MonoBehaviour
     [SerializeField] GameObject explosion;
     [SerializeField] Vector3 radius;
     [SerializeField] float dano;
-
+    [SerializeField] AudioClip explode;
     private void Awake()
     {
 
@@ -40,7 +40,7 @@ public class grenade : MonoBehaviour
     void Explode()
     {
         //Instantiate(explosion, transform.position, transform.rotation);
-
+        SFXManager.Instance.PlaySoundFXClip(explode, transform, 1f);
         Collider[] colliders = Physics.OverlapBox(transform.position, radius);
 
         foreach (Collider player in colliders)
@@ -52,5 +52,19 @@ public class grenade : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Explode();
+            dano = 4;
+        }
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Explode();
+            dano = 2;
+        }
     }
 }

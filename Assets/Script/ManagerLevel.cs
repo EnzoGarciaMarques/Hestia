@@ -30,11 +30,11 @@ public class ManagerLevel : MonoBehaviour
     }
     void Loot()
     {
-        lootSpawned=true;
-        float nowLoot = Random.Range(1, 6);
+        lootSpawned = true;
+        float nowLoot = Random.Range(1, 7);
         if (nowLoot == 1)
         {
-            if (WeaponManager.instance.weapon != 1) 
+            if (FireBall.instance.magic != 1)
             {
                 loot = fire;
             }
@@ -42,29 +42,67 @@ public class ManagerLevel : MonoBehaviour
             {
                 lootSpawned = false;
             }
-            
+
         }
         else if (nowLoot == 2)
         {
-            loot = ice;
+
+            if (FireBall.instance.magic != 2)
+            {
+                loot = ice;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
         }
         else if (nowLoot == 3)
         {
-            loot = amplifier;
+            if (FireBall.instance.magic != 3)
+            {
+                loot = amplifier;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
         }
         else if (nowLoot == 4)
         {
-            loot = shotgun;
+            if (WeaponManager.instance.weapon != 2)
+            {
+                loot = shotgun;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
         }
         else if (nowLoot == 5)
         {
-            loot = revolver;
+            if (WeaponManager.instance.weapon != 1)
+            {
+                loot = revolver;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
         }
         else if (nowLoot == 6)
         {
-            loot = sword;
+            if (WeaponManager.instance.weapon != 3)
+            {
+                loot = sword;
+            }
+            else
+            {
+                lootSpawned = false;
+            }
         }
-
-        Instantiate(loot, spawnLoot.transform.position, transform.rotation);
+        if (lootSpawned == true) 
+        { 
+            Instantiate(loot, spawnLoot.transform.position, transform.rotation);
+        }
     }
 }

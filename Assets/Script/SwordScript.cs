@@ -7,7 +7,7 @@ using UnityEngine;
 public class SwordScript : MonoBehaviour
 {
     [SerializeField] float dano;
-
+    bool somToca = false;
 
     [SerializeField] AudioClip shotClip;
     Animator anima;
@@ -27,8 +27,11 @@ public class SwordScript : MonoBehaviour
         text.text = "";
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            //kaue som de tiro aqui
-            SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
+            if (!somToca)
+            {
+                //kaue som de tiro aqui
+                StartCoroutine(Music());
+            }
 
             anima.SetBool("atirando", true);
             collide.enabled = true;
@@ -40,6 +43,14 @@ public class SwordScript : MonoBehaviour
 
 
         }
+    }
+    IEnumerator Music()
+    {
+        somToca = true;
+        SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
+        yield return new WaitForSeconds(1f);
+        somToca = false;
+
     }
 
 }

@@ -41,5 +41,11 @@ public class Pause : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("Menu");
+        Destroy(Quests.instance.gameObject);
+        Destroy(gameObject);
+        Destroy(PlayerHealth.instance.sfx.gameObject);
+        Destroy(PlayerHealth.instance.music.gameObject);
+        Destroy(PlayerHealth.instance.canvas.gameObject);
+        Destroy(PlayerHealth.instance.sound.gameObject);
     }
 }

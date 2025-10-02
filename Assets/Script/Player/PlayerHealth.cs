@@ -19,10 +19,10 @@ public class PlayerHealth : MonoBehaviour
 
     Vector3 originalPos;
     [SerializeField] Animator life;
-    [SerializeField] GameObject canvas;
-    [SerializeField] GameObject music;
-    [SerializeField] GameObject sfx;
-    [SerializeField] GameObject sound;
+    [SerializeField] public GameObject canvas;
+    [SerializeField] public GameObject music;
+    [SerializeField] public GameObject sfx;
+    [SerializeField] public GameObject sound;
 
     public static PlayerHealth instance;
 

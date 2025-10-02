@@ -2036,6 +2036,10 @@ PrefabInstance:
       propertyPath: shotClip
       value: 
       objectReference: {fileID: 8300000, guid: c137c4dfb00504d40a03a739b2c766c7, type: 3}
+    - target: {fileID: 6850282746913086941, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7880199418343299272, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: PauseMenu
       value: 

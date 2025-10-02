@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3adf2d7b9e17d4784e65e813bab310, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.441
+      value: -237.50668
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3adf2d7b9e17d4784e65e813bab310, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.892
+      value: 0.15030563
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3adf2d7b9e17d4784e65e813bab310, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.934
+      value: 50.47673
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c3adf2d7b9e17d4784e65e813bab310, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101,6 +101,7 @@ MonoBehaviour:
   explosion: {fileID: 0}
   radius: {x: 5, y: 5, z: 5}
   dano: 2
+  explode: {fileID: 8300000, guid: 1dcf1cf201acd8b4d89a5cec44a9aa04, type: 3}
 --- !u!54 &9005213214851866995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
