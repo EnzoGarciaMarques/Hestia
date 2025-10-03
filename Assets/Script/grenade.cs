@@ -10,6 +10,7 @@ public class grenade : MonoBehaviour
     [SerializeField] Vector3 radius;
     [SerializeField] float dano;
     [SerializeField] AudioClip explode;
+    [SerializeField] ParticleSystem ps;
     private void Awake()
     {
 
@@ -25,6 +26,7 @@ public class grenade : MonoBehaviour
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+
     }
 
     // Update is called once per frame
@@ -34,15 +36,17 @@ public class grenade : MonoBehaviour
 
         if (timer > 3)
         {
-           Explode(); 
+           Explode();
+           ps.Play();
+
         }
     }
     void Explode()
     {
+
         //Instantiate(explosion, transform.position, transform.rotation);
         SFXManager.Instance.PlaySoundFXClip(explode, transform, 1f);
         Collider[] colliders = Physics.OverlapBox(transform.position, radius);
-
         foreach (Collider player in colliders)
         {
             PlayerHealth damage = player.transform.GetComponent<PlayerHealth>();
