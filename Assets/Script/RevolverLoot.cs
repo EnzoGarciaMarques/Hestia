@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class RevolverLoot : Interactable
 {
-    [SerializeField] PortaCorredor level;
+
+    [SerializeField] GameObject spingarda;
+    [SerializeField] GameObject espada;
     void Start()
     {
 
@@ -15,8 +18,20 @@ public class RevolverLoot : Interactable
     }
     protected override void Interact()
     {
-        level.loot -= 1;
+        if (WeaponManager.instance.weapon != 1 && WeaponManager.instance.weapon != 0)
+        {
+            if (WeaponManager.instance.weapon == 3)
+            {
+                Instantiate(espada, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
+            }
+            else if (WeaponManager.instance.weapon == 2)
+            {
+                Instantiate(spingarda, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
+            }
+        }
+
         WeaponManager.instance.weapon = 1;
+       
         Destroy(gameObject);
     }
 }

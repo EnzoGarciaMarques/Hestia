@@ -14,16 +14,24 @@ public class MouseMovement : MonoBehaviour
 
     InputAction looktAction;
     Vector2 lookInput;
-
+    [SerializeField] Pause pause;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //mouseSensivity = sensivity.instance.sense;
+        if (pause.pause == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        mouseSensivity = sensivity.instance.sense;
         float mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
 

@@ -155,3 +155,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Pegar
+  spingarda: {fileID: 2479308369704805939, guid: 60c01ded5699e534db2f76c91f42c454, type: 3}
+  revolver: {fileID: 8989793139291389427, guid: 3dd5160e2b7504d4ea556199c9501528, type: 3}

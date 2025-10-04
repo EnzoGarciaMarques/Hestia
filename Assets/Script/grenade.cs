@@ -37,7 +37,6 @@ public class grenade : MonoBehaviour
         if (timer > 3)
         {
            Explode();
-           ps.Play();
 
         }
     }
@@ -45,6 +44,7 @@ public class grenade : MonoBehaviour
     {
 
         //Instantiate(explosion, transform.position, transform.rotation);
+        ps.Play();
         SFXManager.Instance.PlaySoundFXClip(explode, transform, 1f);
         Collider[] colliders = Physics.OverlapBox(transform.position, radius);
         foreach (Collider player in colliders)

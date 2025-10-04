@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
-
+    public bool pause = false;
     private void Awake()
     {
 
@@ -26,12 +26,12 @@ public class Pause : MonoBehaviour
         if (PauseMenu.activeSelf == true)
         {
             Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
+            pause = true;
         }
         else
         {
             Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
+            pause = false;
         }
     }
     public void Continue()
@@ -40,7 +40,7 @@ public class Pause : MonoBehaviour
     }
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("cutscene_inicial");
         Destroy(Quests.instance.gameObject);
         Destroy(gameObject);
         Destroy(PlayerHealth.instance.sfx.gameObject);

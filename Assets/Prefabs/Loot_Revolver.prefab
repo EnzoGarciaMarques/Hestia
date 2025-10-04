@@ -124,3 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: Pegar
   level: {fileID: 0}
+  spingarda: {fileID: 2479308369704805939, guid: 60c01ded5699e534db2f76c91f42c454, type: 3}
+  espada: {fileID: 4987141327256336861, guid: d0599838b1ff7e44895b22d614f51531, type: 3}

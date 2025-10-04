@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class sensivity : MonoBehaviour
 {
-    public float sense;
+    public float sense = 500;
     public static sensivity instance;
 
     private void Awake()

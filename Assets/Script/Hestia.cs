@@ -23,6 +23,10 @@ public class Hestia : Interactable
     // Update is called once per frame
     void Update()
     {
+        if (Quests.instance.firstTime)
+        {
+            promptMessage = "Aperte E para conversar";
+        }
         if (Quests.instance.firstTime && dialogo == 1)
         {
 

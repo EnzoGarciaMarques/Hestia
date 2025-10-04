@@ -5,7 +5,7 @@ public class ManagerLevel : MonoBehaviour
     public float inimigos;
     [SerializeField] bool lootSpawned = false;
     GameObject loot;
-    [SerializeField] GameObject spawnLoot;
+    [SerializeField] public GameObject spawnLoot;
     [SerializeField] GameObject fire;
     [SerializeField] GameObject ice;
     [SerializeField] GameObject amplifier;
@@ -14,9 +14,17 @@ public class ManagerLevel : MonoBehaviour
     [SerializeField] GameObject sword;
     [SerializeField] GameObject cadeado;
     Collider col;
-
+    public static ManagerLevel instance;
     private void Start()
     {
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
         col = GetComponent<Collider>();
     }
     private void Update()
