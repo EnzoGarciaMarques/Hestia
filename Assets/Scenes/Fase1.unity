@@ -1978,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407202136429983487, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407202136429983487, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_TagString
@@ -1987,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 957811833443343165, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Name
       value: player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810794035874660364, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2071338332315626604, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: life
@@ -2020,6 +2024,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5500084713688055810, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5550007564333279321, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: promptText
       value: 
@@ -2028,6 +2036,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1869683480}
+    - target: {fileID: 5657799288588783589, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: reloadTime
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 6757525929417882830, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: text
       value: 

@@ -128,7 +128,7 @@ MonoBehaviour:
   fireRate: 15
   cameras: {fileID: 0}
   maxAmmo: 6
-  reloadTime: 2
+  reloadTime: 1
   shotClip: {fileID: 8300000, guid: 391a6cb2346a23042b13afdbfbc39ae1, type: 3}
   reloadClip: {fileID: 8300000, guid: dd68329b069005541bf9806097b56465, type: 3}
   text: {fileID: 0}
