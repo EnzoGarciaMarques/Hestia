@@ -6,14 +6,13 @@ public class grenade : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] float force;
     private float timer;
-    [SerializeField] GameObject explosion;
     [SerializeField] Vector3 radius;
     [SerializeField] float dano;
     [SerializeField] AudioClip explode;
     [SerializeField] ParticleSystem ps;
     private void Awake()
     {
-
+        
     }
     // Start is called before the first frame update
     void Start()

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5346585590390691333}
   - component: {fileID: 5806357109209312792}
   - component: {fileID: 6379847157779572122}
-  - component: {fileID: 6503980582109331039}
   - component: {fileID: 2926456847365909507}
   m_Layer: 0
   m_Name: rabanete
@@ -166,33 +165,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.239999, y: 16.312578, z: 1.0996941}
   m_Center: {x: 0, y: 0.78400946, z: -0.16738251}
---- !u!54 &6503980582109331039
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860106128788682911}
-  serializedVersion: 4
-  m_Mass: 0.001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &2926456847365909507
 MonoBehaviour:
   m_ObjectHideFlags: 0

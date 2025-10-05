@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 9217108562724567161}
   - component: {fileID: 8859553824269852680}
   - component: {fileID: 6246063228746053813}
-  - component: {fileID: 4301386082356575748}
   - component: {fileID: -7842975262301198649}
   m_Layer: 0
   m_Name: EnemyRanged
@@ -152,7 +151,7 @@ MonoBehaviour:
   health: 20
   upgradePerLvl: 0
   flame: 2
-  fire: {fileID: 0}
+  fire: {fileID: 2508532841354621102, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
   dano: 0
   morto: 0
   soundDano: {fileID: 8300000, guid: 08aa13661a4d0d34aa7362145b79871c, type: 3}
@@ -197,33 +196,7 @@ MonoBehaviour:
   Balapos: {fileID: 3283099504845962801}
   mele: {fileID: 9217108562724567161}
   attack: {fileID: 8300000, guid: e9c4c9bd4d8c3da4cb33d9dd55dba8f0, type: 3}
---- !u!54 &4301386082356575748
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5047043337236466730}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  y: 2.735
 --- !u!95 &-7842975262301198649
 Animator:
   serializedVersion: 7

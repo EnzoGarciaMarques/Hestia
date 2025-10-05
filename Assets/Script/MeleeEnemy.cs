@@ -18,6 +18,7 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] Transform attackPos;
     [SerializeField] Transform bate1;
     [SerializeField] Transform bate2;
+    [SerializeField] float y;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 voar = new Vector3(transform.position.x, y, transform.position.z);
+        transform.position = voar;
         if (mele.morto == false)
         {
             if (mele.dano == false)
