@@ -18,6 +18,7 @@ public class Shotgun : MonoBehaviour
     float ammo;
     bool nextTimeToFire = true;
     bool isReloading;
+    [SerializeField] ParticleSystem ps;
     //[SerializeField] Animator weaponUi;
 
 
@@ -80,6 +81,8 @@ public class Shotgun : MonoBehaviour
     }
     void Shoot()
     {
+        ps.Play();
+
         ammo--;
         RaycastHit hit;
         if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))

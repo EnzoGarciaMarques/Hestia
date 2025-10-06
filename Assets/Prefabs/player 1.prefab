@@ -142,6 +142,7 @@ MonoBehaviour:
   mouseSensivity: 500
   topLimit: -90
   bottomLimit: 90
+  pause: {fileID: 0}
 --- !u!114 &575177792266481365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  dashing: {fileID: 0}
 --- !u!54 &3217790891640494979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -302,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 0}
+  pause: 0
 --- !u!1 &3989282009545952617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,7 +5454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1466548945681662631, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1466548945681662631, guid: b3a3c913f73817e4bbbd13f046427774, type: 3}
       propertyPath: m_TagString
@@ -5655,7 +5658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187083015712307765, guid: 8bca067f2b51e2141ad7416c53572788, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399838169667637633, guid: 8bca067f2b51e2141ad7416c53572788, type: 3}
       propertyPath: dano
