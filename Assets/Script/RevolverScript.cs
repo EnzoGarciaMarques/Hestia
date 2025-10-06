@@ -24,6 +24,11 @@ public class RevolverScript : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text;
 
+    [SerializeField] private TrailRenderer bulletTrail;
+    [SerializeField] private LayerMask mask;
+    [SerializeField] private Transform bulletSpawn;
+    [SerializeField] private ParticleSystem ps;
+
     private void Start()
     {
         ammo = maxAmmo;
@@ -76,10 +81,13 @@ public class RevolverScript : MonoBehaviour
     }
     void Shoot ()
     {
+        ps.Play();
         ammo--;
         RaycastHit hit;
         if (Physics.Raycast(cameras.transform.position, cameras.transform.forward, out hit, range))
         {
+            TrailRenderer trail = Instantiate(bulletTrail, bulletSpawn.position, Quaternion.identity);
+            StartCoroutine(SpawnTrail(trail, hit));
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
             if (damage != null)
             {
@@ -88,6 +96,24 @@ public class RevolverScript : MonoBehaviour
         }
 
 
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit Hit)
+    {
+        float time = 0;
+        Vector3 startPosition = trail.transform.position;
+
+        while(time < 0.5)
+        {
+            trail.transform.position = Vector3.Lerp(startPosition, Hit.point, time);
+            time += Time.deltaTime / trail.time;
+
+            yield return null;
+        }
+
+
+        trail.transform.position = Hit.point;
+        Destroy(trail.gameObject, trail.time);
     }
 
 
