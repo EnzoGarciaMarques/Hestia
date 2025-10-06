@@ -4267,9 +4267,8 @@ MonoBehaviour:
   dialogo: 0
   texto1: ai como to tiste
   texto2: "que casa \xE9 essa"
-  mouseMovement: {fileID: 2293667808589762556, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
-  playerMovement: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
-  susto: {fileID: 8300000, guid: b7d2077af661ba449b23ebbb38b39009, type: 3}
+  mouseMovement: {fileID: 2078969216}
+  playerMovement: {fileID: 2078969215}
 --- !u!114 &413845148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5348,6 +5347,10 @@ PrefabInstance:
       value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: dashing
+      value: 
+      objectReference: {fileID: 8300000, guid: 32ce17b20dcbbb64c838ffd853420e80, type: 3}
+    - target: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -5431,6 +5434,10 @@ PrefabInstance:
       propertyPath: attack2
       value: 
       objectReference: {fileID: 8300000, guid: 01a84e16e79640444bb9a7a9d6cea079, type: 3}
+    - target: {fileID: 2508532841354621102, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: velocity
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4671382934026805329, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: armas
       value: 
@@ -5447,6 +5454,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 974749742}
+    - target: {fileID: 5657799288588783589, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: tempoTiro
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6757525929417882830, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: text
       value: 
@@ -5472,9 +5483,17 @@ PrefabInstance:
       value: 1.052999
       objectReference: {fileID: 0}
     - target: {fileID: 8929073100120157112, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: dano
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929073100120157112, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: text
       value: 
       objectReference: {fileID: 974749742}
+    - target: {fileID: 8929073100120157112, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: range
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 9037840116206610592, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_TagString
       value: Sword
@@ -5483,7 +5502,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8929073100120157112, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5493,6 +5513,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 957811833443343165, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2078969217}
+    - targetCorrespondingSourceObject: {fileID: 2870653924003076267, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 507754013}
   m_SourcePrefab: {fileID: 100100000, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
 --- !u!114 &507754010 stripped
 MonoBehaviour:
@@ -5505,6 +5528,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc690cb164de1a04f8c3adfe6e938161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &507754011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2870653924003076267, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+  m_PrefabInstance: {fileID: 507754009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &507754012 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2324044822772971141, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+  m_PrefabInstance: {fileID: 507754009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &507754013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507754011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15f9ce0501252e498d11ce067a9ac02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 25
+  range: 25
+  fireRate: 0
+  tempoTiro: 0.8
+  cameras: {fileID: 507754012}
+  maxAmmo: 2
+  reloadTime: 1.5
+  shotClip: {fileID: 8300000, guid: 865c0b3c7377c814e923e8f76fac8589, type: 3}
+  reloadClip: {fileID: 8300000, guid: ff8c4b819f17f6e4c91fdff780d2b9c3, type: 3}
+  text: {fileID: 974749742}
 --- !u!1001 &510159347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15263,7 +15318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38887504, y: 0.18218522}
   m_AnchorMax: {x: 0.61325, y: 0.33244446}
-  m_AnchoredPosition: {x: -1.8437958, y: -1}
+  m_AnchoredPosition: {x: -1.843811, y: -1}
   m_SizeDelta: {x: -252.0074, y: -91.3472}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1506025630

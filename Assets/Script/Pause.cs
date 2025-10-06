@@ -42,6 +42,7 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene("cutscene_inicial");
         Destroy(Quests.instance.gameObject);
+        Destroy(sensivity.instance.gameObject);
         Destroy(gameObject);
         Destroy(PlayerHealth.instance.sfx.gameObject);
         Destroy(PlayerHealth.instance.music.gameObject);

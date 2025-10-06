@@ -7,7 +7,7 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] float dano;
     [SerializeField] float range;
     [SerializeField] float fireRate;
-
+    [SerializeField] float tempoTiro;
     [SerializeField] Camera cameras;
 
     [SerializeField] int maxAmmo = 6;
@@ -35,7 +35,7 @@ public class RevolverScript : MonoBehaviour
             text.text = ammo.ToString();
         if (isReloading)
             return;
-        if (ammo <= 0 || Input.GetKeyDown(KeyCode.R) && ammo < 6)
+        if (ammo <= 0 && nextTimeToFire || Input.GetKeyDown(KeyCode.R) && nextTimeToFire && ammo < maxAmmo)
         {
             StartCoroutine(Reload());
             return;
@@ -46,8 +46,8 @@ public class RevolverScript : MonoBehaviour
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 0.2f);
 
             anima.SetBool("atirando", true);
-            StartCoroutine(Tiro());
             nextTimeToFire = false;
+            StartCoroutine(Tiro());
             Shoot();
             
         }
@@ -70,7 +70,7 @@ public class RevolverScript : MonoBehaviour
 
     IEnumerator Tiro()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(tempoTiro);
         anima.SetBool("atirando", false);
         nextTimeToFire = true;
     }

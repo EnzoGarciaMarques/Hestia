@@ -159,3 +159,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Pegar Magia
+  cura: {fileID: 6231672659253215187, guid: 4a9b0dadb41b45b458348b64d1af379e, type: 3}
+  gelo: {fileID: 7909233742287250354, guid: e0b2a5f346e533f42837ab3eff2e87c5, type: 3}

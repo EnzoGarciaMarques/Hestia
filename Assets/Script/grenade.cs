@@ -32,13 +32,6 @@ public class grenade : MonoBehaviour
     void Update()
     {
 
-        timer += Time.deltaTime;
-
-        if (timer > 3)
-        {
-           Explode();
-
-        }
     }
     void Explode()
     {
@@ -62,13 +55,13 @@ public class grenade : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            dano = 3;
             Explode();
-            dano = 4;
         }
         if (other.gameObject.CompareTag("Ground"))
         {
-            Explode();
             dano = 2;
+            Explode();
         }
     }
 }

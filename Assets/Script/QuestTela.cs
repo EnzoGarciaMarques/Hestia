@@ -18,7 +18,7 @@ public class QuestTela : MonoBehaviour
         }
         if (Quests.instance.getQuest && !Quests.instance.questCompleted)
         {
-            chat.text = "Pegue 5 cenouras para Coelha Possui" + Quests.instance.carrots.ToString();
+            chat.text = "Pegue 5 cenouras para Coelha Possui " + Quests.instance.carrots.ToString();
         }
         if (Quests.instance.questCompleted)
         {

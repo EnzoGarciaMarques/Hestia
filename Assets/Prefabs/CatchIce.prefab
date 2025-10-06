@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Pegar
-  magic: {fileID: 0}
+  fogo: {fileID: 2376345330900782477, guid: 7f3367f707d01d54fa463a0ec716aca7, type: 3}
+  cura: {fileID: 6231672659253215187, guid: 4a9b0dadb41b45b458348b64d1af379e, type: 3}
 --- !u!95 &2057739986042481772
 Animator:
   serializedVersion: 7

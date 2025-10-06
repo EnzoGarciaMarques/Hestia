@@ -18,7 +18,6 @@ public class Shotgun : MonoBehaviour
     float ammo;
     bool nextTimeToFire = true;
     bool isReloading;
-    FireBall magic;
     //[SerializeField] Animator weaponUi;
 
 
@@ -35,7 +34,7 @@ public class Shotgun : MonoBehaviour
         text.text = ammo.ToString();
         if (isReloading)
             return;
-        if (Input.GetKeyDown(KeyCode.R) && !anima.GetBool("atirando") && ammo < 2)
+        if (Input.GetKeyDown(KeyCode.R) && ammo < 2)
         {
             StartCoroutine(Reload());
             return;
@@ -50,8 +49,9 @@ public class Shotgun : MonoBehaviour
             //kaue som de tiro aqui
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 1f);
             anima.SetBool("atirando", true);
-            StartCoroutine(Tiro());
             nextTimeToFire = false;
+            StartCoroutine(Tiro());
+            
             Shoot();
 
         }
@@ -74,7 +74,7 @@ public class Shotgun : MonoBehaviour
 
     IEnumerator Tiro()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.2f);
         anima.SetBool("atirando", false);
         nextTimeToFire = true;  
     }

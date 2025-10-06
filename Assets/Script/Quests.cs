@@ -29,10 +29,6 @@ public class Quests : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (carrots == 5 && getQuest == true)
-        {
-            questCompleted = true;
-        }
         if (carrots > 5)
         {
             carrots = 5;

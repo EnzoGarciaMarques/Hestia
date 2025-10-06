@@ -137,6 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Pegar Magia
+  fogo: {fileID: 2376345330900782477, guid: 7f3367f707d01d54fa463a0ec716aca7, type: 3}
+  gelo: {fileID: 7909233742287250354, guid: e0b2a5f346e533f42837ab3eff2e87c5, type: 3}
 --- !u!95 &3427520009599422561
 Animator:
   serializedVersion: 7

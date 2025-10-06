@@ -58,7 +58,14 @@ public class PlayerHealth : MonoBehaviour
             shakeDuration = 0f;
             camTransform.localPosition = originalPos;
         }
-        life.SetInteger("vida", (int)health);
+        if (health< 0)
+        {
+            life.SetInteger("vida", 0);
+        }
+        else
+        {
+            life.SetInteger("vida", (int)health);
+        }
     }
     public void DamageTaken(float amount)
     {

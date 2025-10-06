@@ -11,9 +11,7 @@ public class BunnyScared : Interactable
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
     private string prompt;
-    [SerializeField] AudioClip susto;
     Animator animator;
-    bool cantando;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,12 +21,12 @@ public class BunnyScared : Interactable
         {
             Destroy(gameObject);
         }
+        animator.SetInteger("humor", 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetInteger("humor", 1);
         if (Quests.instance.rescue)
         {
             texto1 = "Brigado amigo!";
@@ -58,6 +56,5 @@ public class BunnyScared : Interactable
     protected override void Interact()
     {
         dialogo += 1;
-        SFXManager.Instance.PlaySoundFXClip(susto, transform, 1f);
     }
 }
