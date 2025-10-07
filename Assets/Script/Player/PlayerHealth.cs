@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public GameObject music;
     [SerializeField] public GameObject sfx;
     [SerializeField] public GameObject sound;
+    [SerializeField] bool test = false;
 
     public static PlayerHealth instance;
 
@@ -43,6 +44,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
+        if (test)
+        {
+            health = 100;
+        }
         if (health > 6)
         {
             health = 6;

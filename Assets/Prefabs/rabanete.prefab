@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1022417922761159367}
   - component: {fileID: 5346585590390691333}
   - component: {fileID: 5806357109209312792}
-  - component: {fileID: 6379847157779572122}
   - component: {fileID: 2926456847365909507}
+  - component: {fileID: 8439189790011031873}
   m_Layer: 0
   m_Name: rabanete
   m_TagString: Untagged
@@ -139,13 +139,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  shootingRange: 20
+  shootingRange: 15
   Bala: {fileID: 3812257031439725058, guid: 90f2e521713d3c2459cc003ea39d64e6, type: 3}
-  y: 9
+  y: 4
   mele: {fileID: 2926456847365909507}
   attack: {fileID: 8300000, guid: 194258f0a8d23d048ad2fb6e95410c43, type: 3}
---- !u!65 &6379847157779572122
-BoxCollider:
+--- !u!114 &2926456847365909507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860106128788682911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 25
+  upgradePerLvl: 0
+  flame: 2
+  fire: {fileID: 2508532841354621102, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+  dano: 0
+  morto: 0
+  soundDano: {fileID: 8300000, guid: fffde5c0684909044b248ccf2fdcb5cc, type: 3}
+  soundMorte: {fileID: 8300000, guid: 8db20ce7e330b3846af01d4aa022831d, type: 3}
+  level: {fileID: 0}
+--- !u!135 &8439189790011031873
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -163,26 +184,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.239999, y: 16.312578, z: 1.0996941}
-  m_Center: {x: 0, y: 0.78400946, z: -0.16738251}
---- !u!114 &2926456847365909507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860106128788682911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec02fa9f31bc3a1468bd588a1b12938f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  upgradePerLvl: 0
-  flame: 2
-  fire: {fileID: 2508532841354621102, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
-  dano: 0
-  morto: 0
-  soundDano: {fileID: 8300000, guid: fffde5c0684909044b248ccf2fdcb5cc, type: 3}
-  soundMorte: {fileID: 8300000, guid: 8db20ce7e330b3846af01d4aa022831d, type: 3}
-  level: {fileID: 0}
+  m_Radius: 7.745631
+  m_Center: {x: -0.39851964, y: 0.79946566, z: 0}

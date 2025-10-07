@@ -21,6 +21,8 @@ public class BossScript : MonoBehaviour
     Rigidbody rb;
     float lastAttack;
     [SerializeField] ParticleSystem ps;
+    [SerializeField] float gravity = -9.81f * 2;
+    bool gravidade;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,12 +49,14 @@ public class BossScript : MonoBehaviour
                             float ataque = Random.Range(1, 4);
                             if (ataque == 1 && lastAttack != 1)
                             {
+                                anim.SetBool("fumaca", true);
                                 SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
                                 lastAttack = ataque;
                                 StartCoroutine(Fumaca());
                             }
                             else if (ataque == 2 && lastAttack != 2)
                             {
+                                anim.SetBool("mosca", true);
                                 SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
                                 lastAttack = ataque;
                                 StartCoroutine(moquito());
@@ -60,12 +64,13 @@ public class BossScript : MonoBehaviour
                             }
                             else if ( ataque == 3 && lastAttack != 3)
                             {
+                                //aqui
                                 SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
                                 atacando = true;
                                 pulando = true;
                                 Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
+                                gravidade = true;
                                 transform.position = aberto;
-                                rb.useGravity = true;
                                 lastAttack = ataque;
                             }
                         }
@@ -87,8 +92,8 @@ public class BossScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground") && pulando)
         {
+            gravidade =false;
             Instantiate(ps, transform.transform.position, ps.transform.rotation);
-            rb.useGravity = false;
             pulando = false;
             StartCoroutine(PuloHitbox());
 
@@ -105,7 +110,6 @@ public class BossScript : MonoBehaviour
 
     IEnumerator Fumaca()
     {
-        anim.SetBool("fumaca", true);
         atacando = true;
         Instantiate(Bala, Balapos.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
@@ -114,7 +118,6 @@ public class BossScript : MonoBehaviour
     }
     IEnumerator moquito()
     {
-        anim.SetBool("mosca", true);
         atacando = true;
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
