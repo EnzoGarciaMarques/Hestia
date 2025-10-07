@@ -18,11 +18,11 @@ public class CatchIce : Interactable
     {
         if (FireBall.instance.magic != 2 && FireBall.instance.magic != 0)
         {
-            if (WeaponManager.instance.weapon == 3)
+            if (FireBall.instance.magic == 3)
             {
                 Instantiate(cura, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
             }
-            else if (WeaponManager.instance.weapon == 1)
+            else if (FireBall.instance.magic == 1)
             {
                 Instantiate(fogo, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
             }

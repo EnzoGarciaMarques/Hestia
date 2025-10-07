@@ -73,7 +73,7 @@ public class MeleeEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         anim.SetBool("Batendo", true);
         attackPos.position = bate1.position;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.50f);
         anim.SetBool("Batendo", false);
         attackPos.position = bate2.position;
         atacking = false;

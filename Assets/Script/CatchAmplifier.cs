@@ -19,11 +19,11 @@ public class CatchAmplifier : Interactable
     {
         if (FireBall.instance.magic != 3 && FireBall.instance.magic != 0)
         {
-            if (WeaponManager.instance.weapon == 1)
+            if (FireBall.instance.magic == 1)
             {
                 Instantiate(fogo, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
             }
-            else if (WeaponManager.instance.weapon == 2)
+            else if (FireBall.instance.magic == 2)
             {
                 Instantiate(gelo, ManagerLevel.instance.spawnLoot.transform.position, ManagerLevel.instance.transform.rotation);
             }

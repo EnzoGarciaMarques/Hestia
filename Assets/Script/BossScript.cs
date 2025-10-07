@@ -6,7 +6,7 @@ public class BossScript : MonoBehaviour
 {
     public GameObject Bala;
     [SerializeField] GameObject moquitos;
-    [SerializeField] GameObject hitboxPulo;
+    [SerializeField] Collider hitboxPulo;
     public Transform Balapos;
     private float timer;
     bool pulando;
@@ -19,6 +19,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] AudioClip attackpulo;
     SpriteRenderer spriteRenderer;
     Rigidbody rb;
+    float lastAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,20 +44,23 @@ public class BossScript : MonoBehaviour
                         {
                             timer = 0;
                             float ataque = Random.Range(1, 4);
-                            if (ataque == 1)
+                            if (ataque == 1 && lastAttack != 1)
                             {
                                 SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
+                                lastAttack = ataque;
                                 StartCoroutine(Fumaca());
                             }
-                            else if (ataque == 2)
+                            else if (ataque == 2 && lastAttack != 2)
                             {
                                 SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
+                                lastAttack = ataque;
                                 StartCoroutine(moquito());
 
                             }
-                            else if ( ataque == 3)
+                            else if ( ataque == 3 && lastAttack != 3)
                             {
                                 SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
+                                lastAttack = ataque;
                                 StartCoroutine(Pulo());
                             }
                         }
@@ -121,9 +125,9 @@ public class BossScript : MonoBehaviour
     }
     IEnumerator PuloHitbox()
     {
-        hitboxPulo.SetActive(true);
+        hitboxPulo.enabled = true;
         yield return new WaitForSeconds(0.25f);
-        hitboxPulo.SetActive(false);
+        hitboxPulo.enabled = false;
     }
 
 }

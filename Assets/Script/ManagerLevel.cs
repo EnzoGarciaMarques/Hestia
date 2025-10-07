@@ -45,10 +45,11 @@ public class ManagerLevel : MonoBehaviour
             if (FireBall.instance.magic != 1)
             {
                 loot = fire;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
 
         }
@@ -58,10 +59,11 @@ public class ManagerLevel : MonoBehaviour
             if (FireBall.instance.magic != 2)
             {
                 loot = ice;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
         }
         else if (nowLoot == 3)
@@ -69,10 +71,11 @@ public class ManagerLevel : MonoBehaviour
             if (FireBall.instance.magic != 3)
             {
                 loot = amplifier;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
         }
         else if (nowLoot == 4)
@@ -80,10 +83,11 @@ public class ManagerLevel : MonoBehaviour
             if (WeaponManager.instance.weapon != 2)
             {
                 loot = shotgun;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
         }
         else if (nowLoot == 5)
@@ -91,10 +95,11 @@ public class ManagerLevel : MonoBehaviour
             if (WeaponManager.instance.weapon != 1)
             {
                 loot = revolver;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
         }
         else if (nowLoot == 6)
@@ -102,15 +107,17 @@ public class ManagerLevel : MonoBehaviour
             if (WeaponManager.instance.weapon != 3)
             {
                 loot = sword;
+                spawnerLoot();
             }
             else
             {
-                lootSpawned = false;
+                Loot();
             }
         }
-        if (lootSpawned == true) 
-        { 
-            Instantiate(loot, spawnLoot.transform.position, transform.rotation);
-        }
+    }
+
+    void spawnerLoot()
+    {
+        Instantiate(loot, spawnLoot.transform.position, transform.rotation);
     }
 }
