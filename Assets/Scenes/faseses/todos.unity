@@ -19232,6 +19232,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 788613143836207154, guid: bf7cc9b99e02f864e98a2c68d3fd7b19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1253105503}
+    - targetCorrespondingSourceObject: {fileID: 788613143836207154, guid: bf7cc9b99e02f864e98a2c68d3fd7b19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1253105504}
   m_SourcePrefab: {fileID: 100100000, guid: bf7cc9b99e02f864e98a2c68d3fd7b19, type: 3}
 --- !u!1 &1253105502 stripped
 GameObject:
@@ -19257,8 +19260,35 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.029872099, y: 0.029494813, z: 0.026088184}
-  m_Center: {x: 0.000047507696, y: 0.00014113213, z: 0.0012208933}
+  m_Size: {x: 0.041637093, y: 0.04955877, z: 0.037074726}
+  m_Center: {x: -0.0068644444, y: 0.0013059439, z: 0.0067141503}
+--- !u!54 &1253105504
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253105502}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1264784703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26641,7 +26671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063670770083948903, guid: d6626cfecd9aa5e4bb4ce171099edf1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -197.45
+      value: -196.27
       objectReference: {fileID: 0}
     - target: {fileID: 6063670770083948903, guid: d6626cfecd9aa5e4bb4ce171099edf1e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26649,7 +26679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063670770083948903, guid: d6626cfecd9aa5e4bb4ce171099edf1e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.67
+      value: 19.48
       objectReference: {fileID: 0}
     - target: {fileID: 6063670770083948903, guid: d6626cfecd9aa5e4bb4ce171099edf1e, type: 3}
       propertyPath: m_LocalRotation.w

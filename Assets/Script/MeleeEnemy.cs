@@ -65,6 +65,10 @@ public class MeleeEnemy : MonoBehaviour
                 }
             }
         }
+        if (mele.morto == true)
+        {
+            Destroy(attackPos.gameObject);
+        }
     }
 
     IEnumerator Punch()
