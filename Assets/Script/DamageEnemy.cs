@@ -69,6 +69,8 @@ public class DamageEnemy : MonoBehaviour
         TakeDamage(fire.damage);
         yield return new WaitForSeconds(flame);
         TakeDamage(fire.damage);
+        yield return new WaitForSeconds(flame);
+        TakeDamage(fire.damage);
         spriteRenderer.color = Color.white;
 
     }

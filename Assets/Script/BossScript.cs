@@ -20,6 +20,7 @@ public class BossScript : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody rb;
     float lastAttack;
+    [SerializeField] ParticleSystem ps;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +61,12 @@ public class BossScript : MonoBehaviour
                             else if ( ataque == 3 && lastAttack != 3)
                             {
                                 SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
+                                atacando = true;
+                                pulando = true;
+                                Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
+                                transform.position = aberto;
+                                rb.useGravity = true;
                                 lastAttack = ataque;
-                                StartCoroutine(Pulo());
                             }
                         }
                     }
@@ -80,10 +85,13 @@ public class BossScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("ground") && pulando)
+        if (other.gameObject.CompareTag("Ground") && pulando)
         {
+            Instantiate(ps, transform.transform.position, ps.transform.rotation);
+            rb.useGravity = false;
             pulando = false;
             StartCoroutine(PuloHitbox());
+
         }
     }
     IEnumerator Freeze()
@@ -113,20 +121,11 @@ public class BossScript : MonoBehaviour
         anim.SetBool("mosca", false);
         atacando = false;
     }
-    IEnumerator Pulo()
-    {
-        atacando = true;
-        pulando = true;
-        Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
-        transform.position = aberto;
-        rb.useGravity = true;
-        yield return new WaitForSeconds(2);
-        atacando = false;
-    }
     IEnumerator PuloHitbox()
     {
         hitboxPulo.enabled = true;
         yield return new WaitForSeconds(0.25f);
+        atacando = false;
         hitboxPulo.enabled = false;
     }
 

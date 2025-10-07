@@ -43,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
+        health = 1000;
         if (health > 6)
         {
             health = 6;

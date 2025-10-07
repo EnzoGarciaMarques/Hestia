@@ -9,7 +9,7 @@ public class grenade : MonoBehaviour
     [SerializeField] Vector3 radius;
     [SerializeField] float dano;
     [SerializeField] AudioClip explode;
-    [SerializeField] ParticleSystem ps;
+    [SerializeField] GameObject ps;
     private void Awake()
     {
         
@@ -37,7 +37,7 @@ public class grenade : MonoBehaviour
     {
 
         //Instantiate(explosion, transform.position, transform.rotation);
-        ps.Play();
+        Instantiate(ps, transform.position, Quaternion.identity);
         SFXManager.Instance.PlaySoundFXClip(explode, transform, 1f);
         Collider[] colliders = Physics.OverlapBox(transform.position, radius);
         foreach (Collider player in colliders)

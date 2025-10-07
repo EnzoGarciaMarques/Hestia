@@ -67,9 +67,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash()
     {
         dash = false;
-        speed = speed * 1.5f;
+        speed = speed * 2f;
         SFXManager.Instance.PlaySoundFXClip(dashing, transform, 1f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         speed = realSpeed;
         dash = true;
     }
