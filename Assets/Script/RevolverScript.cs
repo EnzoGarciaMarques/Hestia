@@ -89,9 +89,14 @@ public class RevolverScript : MonoBehaviour
             TrailRenderer trail = Instantiate(bulletTrail, bulletSpawn.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
             DamageEnemy damage = hit.transform.GetComponent<DamageEnemy>();
+            MoquitoDano damage2 = hit.transform.GetComponent<MoquitoDano>();
             if (damage != null)
             {
                     damage.TakeDamage(dano);  
+            }
+            if (damage2 != null)
+            {
+                damage2.Hit(dano);
             }
         }
 

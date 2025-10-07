@@ -12,16 +12,26 @@ public class BunnyScared : Interactable
     [SerializeField] PlayerMovement playerMovement;
     private string prompt;
     Animator animator;
+
+    public static BunnyScared instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
         prompt = promptMessage;
         animator = GetComponent<Animator>();
+        animator.SetInteger("humor", 1);
         if (Quests.instance.rescue)
         {
             Destroy(gameObject);
         }
-        animator.SetInteger("humor", 1);
     }
 
     // Update is called once per frame

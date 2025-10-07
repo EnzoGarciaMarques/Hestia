@@ -48,5 +48,6 @@ public class Pause : MonoBehaviour
         Destroy(PlayerHealth.instance.music.gameObject);
         Destroy(PlayerHealth.instance.canvas.gameObject);
         Destroy(PlayerHealth.instance.sound.gameObject);
+        Destroy(BunnyScared.instance.gameObject);
     }
 }

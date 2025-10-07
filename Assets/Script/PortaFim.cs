@@ -15,6 +15,7 @@ public class PortaFim : Interactable
     }
     protected override void Interact()
     {
+        promptMessage = "";
         PlayerHealth.instance.Dead();
     }
 }

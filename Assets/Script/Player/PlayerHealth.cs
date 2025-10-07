@@ -83,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
             DamageTaken(1);
+            Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("EnemySlash"))
         {
@@ -107,6 +108,7 @@ public class PlayerHealth : MonoBehaviour
         Destroy(sound);
         Destroy(sfx);
         Destroy(music);
+        Destroy(BunnyScared.instance.gameObject);
     }
 
 }

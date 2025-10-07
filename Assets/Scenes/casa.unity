@@ -5747,6 +5747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1810794035874660364, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2293667808589762556, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: pause
       value: 
