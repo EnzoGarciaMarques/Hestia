@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public GameObject canvas;
     [SerializeField] public GameObject music;
     [SerializeField] public GameObject sfx;
-    [SerializeField] public GameObject sound;
     [SerializeField] bool test = false;
 
     public static PlayerHealth instance;
@@ -94,6 +93,10 @@ public class PlayerHealth : MonoBehaviour
         {
             DamageTaken(2);
         }
+        if (other.gameObject.CompareTag("boss"))
+        {
+            DamageTaken(1);
+        }
     } 
 
     public void Dead()
@@ -110,7 +113,6 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene("casa");
         Destroy(gameObject);
         Destroy(canvas);
-        Destroy(sound);
         Destroy(sfx);
         Destroy(music);
         Destroy(BunnyScared.instance.gameObject);

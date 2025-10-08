@@ -10,6 +10,8 @@ TagManager:
   - Sword
   - ice
   - EnemySlash
+  - altura
+  - boss
   layers:
   - Default
   - TransparentFX

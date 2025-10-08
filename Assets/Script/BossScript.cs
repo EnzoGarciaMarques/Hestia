@@ -19,6 +19,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] AudioClip attackpulo;
     SpriteRenderer spriteRenderer;
     Rigidbody rb;
+    Collider col;
     float lastAttack;
     [SerializeField] ParticleSystem ps;
     [SerializeField] float gravity = -9.81f * 2;
@@ -29,6 +30,7 @@ public class BossScript : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
 
     }
     // Update is called once per frame
@@ -66,11 +68,12 @@ public class BossScript : MonoBehaviour
                             {
                                 //aqui
                                 SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
+                                Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
+                                transform.position = aberto;
+                                col.isTrigger = false;
+                                rb.useGravity = true;
                                 atacando = true;
                                 pulando = true;
-                                Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
-                                gravidade = true;
-                                transform.position = aberto;
                                 lastAttack = ataque;
                             }
                         }
@@ -79,6 +82,7 @@ public class BossScript : MonoBehaviour
                 }
             }
         }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -92,7 +96,8 @@ public class BossScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground") && pulando)
         {
-            gravidade =false;
+            rb.useGravity = false;
+            col.isTrigger = true;
             Instantiate(ps, transform.transform.position, ps.transform.rotation);
             pulando = false;
             StartCoroutine(PuloHitbox());

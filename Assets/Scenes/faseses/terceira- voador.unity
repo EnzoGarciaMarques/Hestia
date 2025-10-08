@@ -26732,7 +26732,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 523379321366938884, guid: ad44868caa0c2d44fba2f3c45133cd81, type: 3}
       propertyPath: inimigos
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 977064417812136790, guid: ad44868caa0c2d44fba2f3c45133cd81, type: 3}
       propertyPath: m_Name

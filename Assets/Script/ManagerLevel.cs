@@ -49,7 +49,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
 
         }
@@ -63,7 +63,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
         }
         else if (nowLoot == 3)
@@ -75,7 +75,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
         }
         else if (nowLoot == 4)
@@ -87,7 +87,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
         }
         else if (nowLoot == 5)
@@ -99,7 +99,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
         }
         else if (nowLoot == 6)
@@ -111,7 +111,7 @@ public class ManagerLevel : MonoBehaviour
             }
             else
             {
-                Loot();
+                lootSpawned = false;
             }
         }
     }
