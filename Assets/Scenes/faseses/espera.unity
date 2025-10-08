@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b9a770228d6e0d6438cb453f9c3c3d21, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -9317,6 +9317,69 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b840ab935869c840904e65939135cec, type: 3}
+--- !u!1001 &996363376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -255.36
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.1876102
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9822436
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 158.373
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: m_Name
+      value: "carro\xE7a com texturas"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802914909692226031, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 959781af1223751429c2aac31ffebf5a, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+    - {fileID: -8700617353114198275, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 05b6b3b67d9ff5a4db3c7e00f59fb3ae, type: 3}
 --- !u!1001 &998825067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19194,3 +19257,4 @@ SceneRoots:
   - {fileID: 429622655}
   - {fileID: 2130866192}
   - {fileID: 2073979347}
+  - {fileID: 996363376}

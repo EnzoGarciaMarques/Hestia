@@ -8,6 +8,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] GameObject moquitos;
     [SerializeField] Collider hitboxPulo;
     public Transform Balapos;
+    [SerializeField] Transform saida;
     private float timer;
     bool pulando;
     bool atacando;
@@ -18,19 +19,14 @@ public class BossScript : MonoBehaviour
     [SerializeField] AudioClip attackFumaca;
     [SerializeField] AudioClip attackpulo;
     SpriteRenderer spriteRenderer;
-    Rigidbody rb;
-    Collider col;
     float lastAttack;
     [SerializeField] ParticleSystem ps;
-    [SerializeField] float gravity = -9.81f * 2;
-    bool gravidade;
+    [SerializeField] float tempo;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
-        col = GetComponent<Collider>();
 
     }
     // Update is called once per frame
@@ -66,15 +62,12 @@ public class BossScript : MonoBehaviour
                             }
                             else if ( ataque == 3 && lastAttack != 3)
                             {
-                                //aqui
                                 SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
-                                Vector3 aberto = new Vector3(transform.position.x, 50, transform.position.z);
-                                transform.position = aberto;
-                                col.isTrigger = false;
-                                rb.useGravity = true;
+                                anim.SetBool("pulando", true);
                                 atacando = true;
-                                pulando = true;
                                 lastAttack = ataque;
+                                StartCoroutine(Pulo());
+
                             }
                         }
                     }
@@ -92,18 +85,6 @@ public class BossScript : MonoBehaviour
             StartCoroutine(Freeze());
         }
     }
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Ground") && pulando)
-        {
-            rb.useGravity = false;
-            col.isTrigger = true;
-            Instantiate(ps, transform.transform.position, ps.transform.rotation);
-            pulando = false;
-            StartCoroutine(PuloHitbox());
-
-        }
-    }
     IEnumerator Freeze()
     {
         spriteRenderer.color = Color.blue;
@@ -119,6 +100,7 @@ public class BossScript : MonoBehaviour
         Instantiate(Bala, Balapos.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
         anim.SetBool("fumaca", false);
+        Destroy(Bala.gameObject);
         atacando = false;
     }
     IEnumerator moquito()
@@ -129,8 +111,11 @@ public class BossScript : MonoBehaviour
         anim.SetBool("mosca", false);
         atacando = false;
     }
-    IEnumerator PuloHitbox()
+    IEnumerator Pulo()
     {
+        yield return new WaitForSeconds(tempo);
+        anim.SetBool("pulando", false);
+        Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
         yield return new WaitForSeconds(0.25f);
         atacando = false;

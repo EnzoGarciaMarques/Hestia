@@ -40,7 +40,7 @@ public class EnemyAir : MonoBehaviour
                     if (distance < shootingRange)
                     {
                         timer += Time.deltaTime;
-                        if (timer > 3)
+                        if (timer > 2)
                         {
                             timer = 0;
                             SFXManager.Instance.PlaySoundFXClip(attack, transform, 1f);
