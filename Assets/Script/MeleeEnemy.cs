@@ -74,7 +74,7 @@ public class MeleeEnemy : MonoBehaviour
     IEnumerator Punch()
     {
         atacking = true;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         anim.SetBool("Batendo", true);
         attackPos.position = bate1.position;
         yield return new WaitForSeconds(0.50f);

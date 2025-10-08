@@ -32,23 +32,58 @@ public class Bunny : Interactable
         {
             canto.SetActive(true);
         }
-        if (Quests.instance.questCompleted) 
+        if (dialogo == 1 && Quests.instance.questCompleted)
         {
-            texto1 = "Brigado amigo!";
-            texto2 = "vo faze o bolo";
-        }
-        if (dialogo == 1)
-        {
-            chat.text = texto1;
+            chat.text = "Brigado, pelas cenouras.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
         }
-        if (dialogo == 2)
+        if (dialogo == 2 && Quests.instance.questCompleted)
         {
-            chat.text = texto2;
+            chat.text = "Gostou do bolo?";
         }
-        if (dialogo == 3)
+        if (dialogo == 3 && Quests.instance.questCompleted)
+        {
+            chat.text = "Sabe, eu nunca provei meu bolo de cenoura. Eu sempre fiz e os outros comiam tudo, sem deixarem nada pra mim.";
+        }
+        if (dialogo == 4 && Quests.instance.questCompleted)
+        {
+            chat.text = "No final das contas eu acabo nunca comendo um doce meu...";
+        }
+        if (dialogo == 5 && Quests.instance.questCompleted)
+        {
+            chat.text = "";
+            dialogo = 0;
+            mouseMovement.enabled = true;
+            playerMovement.enabled = true;
+            promptMessage = prompt;
+            risadinha = false;
+        }
+        if (dialogo == 1 && !Quests.instance.questCompleted)
+        {
+            chat.text = "Que lugar lindo";
+            mouseMovement.enabled = false;
+            playerMovement.enabled = false;
+            promptMessage = "";
+        }
+        if (dialogo == 2 && !Quests.instance.questCompleted)
+        {
+            chat.text = "Essa cozinha foi feita pra mim, parece que a casa sabia do que eu precisava.";
+        }
+        if (dialogo == 3 && !Quests.instance.questCompleted)
+        {
+            chat.text = "Vou fazer um bolo de agradecimento";
+        }
+        if (dialogo == 4 && !Quests.instance.questCompleted)
+        {
+            chat.text = "Pode ser de morango o predileto do meu maninho, ou de chocolate o predileto do meu… Ex marido…";
+        }
+        if (dialogo == 5 && !Quests.instance.questCompleted)
+        {
+            chat.text = "Tive uma ideia\r\n Vou fazer de cenoura, o predileto do meu pai\r\nOnde posso encontrar essas cenouras?";
+        }
+        if (dialogo == 6 && !Quests.instance.questCompleted)
         {
             chat.text = "";
             dialogo = 0;

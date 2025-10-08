@@ -6,8 +6,6 @@ public class BunnyScared : Interactable
     [SerializeField] TextMeshProUGUI chat;
 
     [SerializeField] float dialogo;
-    [SerializeField] string texto1;
-    [SerializeField] string texto2;
     [SerializeField] MouseMovement mouseMovement;
     [SerializeField] PlayerMovement playerMovement;
     private string prompt;
@@ -37,23 +35,22 @@ public class BunnyScared : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (Quests.instance.rescue)
-        {
-            texto1 = "Brigado amigo!";
-            texto2 = "vo la para a casa";
-        }
         if (dialogo == 1)
         {
-            chat.text = texto1;
+            chat.text = "Onde eu estou?";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
         }
         if (dialogo == 2)
         {
-            chat.text = texto2;
+            chat.text = "A última coisa que eu lembro foi dele me deixando, depois eu tava aqui, me escondendo.";
         }
         if (dialogo == 3)
+        {
+            chat.text = "Casa? Eu vou para ela, muito obrigado.";
+        }
+        if (dialogo == 4)
         {
             chat.text = "";
             dialogo = 0;
