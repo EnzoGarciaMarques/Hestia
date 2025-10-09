@@ -44,7 +44,7 @@ public class BunnyScared : Interactable
         }
         if (dialogo == 2)
         {
-            chat.text = "A última coisa que eu lembro foi dele me deixando, depois eu tava aqui, me escondendo.";
+            chat.text = "A ultima coisa que eu lembro foi dele me deixando, depois eu tava aqui, me escondendo.";
         }
         if (dialogo == 3)
         {
