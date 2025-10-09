@@ -15,6 +15,7 @@ public class ManagerLevel : MonoBehaviour
     [SerializeField] GameObject cadeado;
     Collider col;
     public static ManagerLevel instance;
+   
     private void Start()
     {
         if (instance != null)

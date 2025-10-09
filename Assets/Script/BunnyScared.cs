@@ -58,6 +58,7 @@ public class BunnyScared : Interactable
             playerMovement.enabled = true;
             promptMessage = prompt;
             Quests.instance.rescue = true;
+            PlayerHealth.instance.health = 6;
         }
     }
     protected override void Interact()

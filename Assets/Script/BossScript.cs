@@ -98,7 +98,7 @@ public class BossScript : MonoBehaviour
     {
         atacando = true;
         Instantiate(Bala, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
         anim.SetBool("fumaca", false);
         Destroy(Bala.gameObject);
         atacando = false;

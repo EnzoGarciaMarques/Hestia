@@ -4465,8 +4465,6 @@ MonoBehaviour:
   promptMessage: Conversar
   chat: {fileID: 113547893}
   dialogo: 0
-  texto1: ai como to tiste
-  texto2: "que casa \xE9 essa"
   mouseMovement: {fileID: 2078969216}
   playerMovement: {fileID: 2078969215}
 --- !u!114 &413845148
@@ -5553,6 +5551,10 @@ PrefabInstance:
     - target: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 575177792266481365, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: jumpHeight
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 957811833443343165, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_Name

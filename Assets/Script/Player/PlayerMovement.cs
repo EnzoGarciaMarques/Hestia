@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
-    bool dash = true;
+    [SerializeField] bool dash = true;
     Vector3 velocity;
     [SerializeField] AudioClip dashing;
     bool isGrounded;

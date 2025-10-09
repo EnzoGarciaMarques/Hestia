@@ -23,8 +23,6 @@ public class valdir : MonoBehaviour
             valdirf.alpha -= Time.deltaTime * intesidade;
 
         }
-
-
     }
 
     IEnumerator vvaldir()
