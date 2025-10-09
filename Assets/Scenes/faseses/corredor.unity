@@ -2423,9 +2423,9 @@ Light:
   m_GameObject: {fileID: 252852945}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 1
+  m_Type: 3
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 22.12
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2464,7 +2464,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2488,7 +2488,7 @@ Transform:
   m_GameObject: {fileID: 252852945}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -59.5, y: 1.46, z: 63.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5654,7 +5654,7 @@ PrefabInstance:
       objectReference: {fileID: 974749742}
     - target: {fileID: 2734134580679859067, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: range
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2734134580679859067, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: cameras
