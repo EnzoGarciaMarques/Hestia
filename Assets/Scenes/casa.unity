@@ -10796,7 +10796,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378110289}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -12859,6 +12859,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7054103039434949584, guid: 1ffe4863b6051e141b5e08570d27e4ce, type: 3}
+--- !u!225 &571222373 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4722583523636552218, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+  m_PrefabInstance: {fileID: 1732885096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &572088667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3880993187427891923, guid: 1ffe4863b6051e141b5e08570d27e4ce, type: 3}
@@ -24264,7 +24269,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497055125}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -27771,6 +27776,10 @@ PrefabInstance:
       propertyPath: mask.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4566983794045718158, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: messiernela
+      value: 
+      objectReference: {fileID: 571222373}
     - target: {fileID: 4671382934026805329, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: weapon
       value: 0
@@ -34066,8 +34075,16 @@ PrefabInstance:
       value: Pause, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 972845125702119021, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 972845125702119021, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSize
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 972845125702119021, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 972845125702119021, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSizeBase

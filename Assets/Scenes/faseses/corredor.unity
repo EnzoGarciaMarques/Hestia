@@ -5689,6 +5689,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 242096981687296277, guid: 4fada359db619dd4f8b0ed914e82bb10, type: 3}
     - target: {fileID: 4671382934026805329, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: boga
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671382934026805329, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: armas
       value: 
       objectReference: {fileID: 417817841}
@@ -5754,7 +5758,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7473378664173680573, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4085960839615722709, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       insertIndex: -1

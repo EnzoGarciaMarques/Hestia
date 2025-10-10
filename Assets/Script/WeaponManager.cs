@@ -9,7 +9,6 @@ public class WeaponManager : MonoBehaviour
     public float weapon;
 
     public static WeaponManager instance;
-
     private void Awake()
     {
         if (instance != null) 
