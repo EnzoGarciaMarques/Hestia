@@ -53,11 +53,6 @@ public class grenade : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            dano = 3;
-            Explode();
-        }
         if (other.gameObject.CompareTag("Ground"))
         {
             dano = 2;

@@ -40,36 +40,32 @@ public class BossScript : MonoBehaviour
                 {
                     if (atacando == false)
                     {
-                        timer += Time.deltaTime;
-                        if (timer > 2)
+                        float ataque = Random.Range(1, 4);
+                        if (ataque == 1 && lastAttack != 1)
                         {
-                            timer = 0;
-                            float ataque = Random.Range(1, 4);
-                            if (ataque == 1 && lastAttack != 1)
-                            {
-                                anim.SetBool("fumaca", true);
-                                SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
-                                lastAttack = ataque;
-                                StartCoroutine(Fumaca());
-                            }
-                            else if (ataque == 2 && lastAttack != 2)
-                            {
-                                anim.SetBool("mosca", true);
-                                SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
-                                lastAttack = ataque;
-                                StartCoroutine(moquito());
-
-                            }
-                            else if ( ataque == 3 && lastAttack != 3)
-                            {
-                                SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
-                                anim.SetBool("pulando", true);
-                                atacando = true;
-                                lastAttack = ataque;
-                                StartCoroutine(Pulo());
-
-                            }
+                            anim.SetBool("fumaca", true);
+                            SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
+                            lastAttack = ataque;
+                            StartCoroutine(Fumaca());
                         }
+                        else if (ataque == 2 && lastAttack != 2)
+                        {
+                            anim.SetBool("mosca", true);
+                            SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
+                            lastAttack = ataque;
+                            StartCoroutine(moquito());
+
+                        }
+                        else if ( ataque == 3 && lastAttack != 3)
+                        {
+                            SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
+                            anim.SetBool("pulando", true);
+                            atacando = true;
+                            lastAttack = ataque;
+                            StartCoroutine(Pulo());
+
+                        }
+                        
                     }
                     
                 }
@@ -107,7 +103,7 @@ public class BossScript : MonoBehaviour
     {
         atacando = true;
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4f);
         anim.SetBool("mosca", false);
         atacando = false;
     }

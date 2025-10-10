@@ -6235,6 +6235,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 2473288461276623475, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6420,6 +6432,22 @@ PrefabInstance:
     - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.22352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281949635
       objectReference: {fileID: 0}
     - target: {fileID: 8088488118103780958, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_text
@@ -14800,9 +14828,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1782766311}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 1000
+  m_MaxValue: 500
   m_WholeNumbers: 0
-  m_Value: 442
+  m_Value: 500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

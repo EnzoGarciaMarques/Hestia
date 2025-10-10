@@ -6,7 +6,6 @@ public class Moquito : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] GameObject moquito1;
     [SerializeField] GameObject moquito2;
-    [SerializeField] GameObject moquito3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +20,7 @@ public class Moquito : MonoBehaviour
 
         Vector3 direction = (player.transform.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
-        if (moquito1 == null && moquito2 == null && moquito3 == null)
+        if (moquito1 == null && moquito2 == null)
         {
             Destroy(gameObject);
         }
