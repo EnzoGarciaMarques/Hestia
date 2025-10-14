@@ -27,6 +27,7 @@ public class valdir : MonoBehaviour
 
     IEnumerator vvaldir()
     {
+        valdirf.alpha = 1;
         yield return new WaitForSeconds(tempo);
 
         fade = true;
