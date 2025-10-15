@@ -12,7 +12,7 @@ public class SwordScript : MonoBehaviour
     [SerializeField] AudioClip shotClip;
     Animator anima;
     Collider collide;
-
+    bool nextTimeToFire = true;
     [SerializeField] TextMeshProUGUI text;
 
     private void Start()
@@ -25,7 +25,7 @@ public class SwordScript : MonoBehaviour
     {
 
         text.text = "";
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && nextTimeToFire)
         {
             if (!somToca)
             {
@@ -35,13 +35,8 @@ public class SwordScript : MonoBehaviour
 
             anima.SetBool("atirando", true);
             collide.enabled = true;
-        }
-        else
-        {
-            anima.SetBool("atirando", false);
-            collide.enabled = false;
-
-
+            nextTimeToFire = false;
+            StartCoroutine(Ataque());
         }
     }
     IEnumerator Music()
@@ -51,6 +46,14 @@ public class SwordScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         somToca = false;
 
+    }
+    IEnumerator Ataque()
+    {
+
+        yield return new WaitForSeconds(1f);
+        anima.SetBool("atirando", false);
+        collide.enabled = false;
+        nextTimeToFire = true;
     }
 
 }

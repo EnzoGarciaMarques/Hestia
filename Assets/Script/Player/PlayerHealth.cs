@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Start()
     {
-        camTransform.position = new Vector3(0f, 0.6f, 0f);
+        originalPos = camTransform.localPosition;
     }
     private void Update()
     {

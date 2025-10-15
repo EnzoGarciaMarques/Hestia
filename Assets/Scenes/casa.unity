@@ -10814,7 +10814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &378110290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24364,7 +24364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &1497055126
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -27852,19 +27852,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0005520205
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9999999
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27872,7 +27872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.937
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 307675852737191819, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -34423,7 +34423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontStyle
@@ -34431,7 +34431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSizeBase
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2181398048554038652, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_Enabled
@@ -34641,6 +34641,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3429167720955597043, guid: 1d4616e79673ef4499281e638dc27a6e, type: 2}
+    - target: {fileID: 7983133940461788063, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281949635
+      objectReference: {fileID: 0}
     - target: {fileID: 8026479593088988340, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
