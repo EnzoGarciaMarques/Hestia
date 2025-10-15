@@ -14,6 +14,8 @@ public class Hestia : Interactable
     [SerializeField] PlayerMovement playerMovement;
     private string prompt;
 
+    [SerializeField] GameObject menuFala;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +31,7 @@ public class Hestia : Interactable
         }
         if (dialogo == 1)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "Oi, eu sou Hestia, o espirito protetor dessa casa, eu que te enviei a carta.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -57,6 +60,7 @@ public class Hestia : Interactable
         }
         if (dialogo == 7)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

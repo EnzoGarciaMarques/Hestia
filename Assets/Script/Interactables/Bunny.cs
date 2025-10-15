@@ -19,6 +19,8 @@ public class Bunny : Interactable
     AudioClip clip;
     bool cantando;
     bool risadinha = false;
+
+    [SerializeField] GameObject menuFala;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 1 && Quests.instance.questCompleted)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "Brigado, pelas cenouras.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -53,6 +56,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 5 && Quests.instance.questCompleted)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;
@@ -62,6 +66,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 1 && !Quests.instance.questCompleted)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "Que lugar lindo";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -85,6 +90,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 6 && !Quests.instance.questCompleted)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

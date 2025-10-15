@@ -34,8 +34,8 @@ public class BossScript : MonoBehaviour
     {
         if (mele.morto == false)
         {
-            if (mele.dano == false)
-            {
+            
+           
                 if (ice == false)
                 {
                     if (atacando == false)
@@ -69,7 +69,7 @@ public class BossScript : MonoBehaviour
                     }
                     
                 }
-            }
+           
         }
         
     }

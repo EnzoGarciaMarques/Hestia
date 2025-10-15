@@ -45,7 +45,7 @@ public class RevolverScript : MonoBehaviour
             StartCoroutine(Reload());
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && nextTimeToFire)
+        if (Input.GetKey(KeyCode.Mouse0) && nextTimeToFire)
         {
             //kaue som de tiro aqui
             SFXManager.Instance.PlaySoundFXClip(shotClip, transform, 0.2f);

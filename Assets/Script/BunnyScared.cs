@@ -12,6 +12,7 @@ public class BunnyScared : Interactable
     Animator animator;
 
     public static BunnyScared instance;
+    [SerializeField] GameObject menuFala;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +38,7 @@ public class BunnyScared : Interactable
     {
         if (dialogo == 1)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "Onde eu estou?";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -52,6 +54,7 @@ public class BunnyScared : Interactable
         }
         if (dialogo == 4)
         {
+            menuFala.SetActive(!menuFala.activeSelf);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

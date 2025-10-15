@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public GameObject music;
     [SerializeField] public GameObject sfx;
     [SerializeField] bool test = false;
+    [SerializeField] GameObject pisca;
 
     public static PlayerHealth instance;
 
@@ -39,6 +40,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Start()
     {
+        Vector3 currentRotation = transform.eulerAngles;
+        transform.eulerAngles = new Vector3(currentRotation.x, -90f, currentRotation.z);
         originalPos = camTransform.localPosition;
     }
     private void Update()
@@ -81,6 +84,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Dead();
         }
+        else
+        {
+            StartCoroutine(DanoPlayer());
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -116,6 +123,13 @@ public class PlayerHealth : MonoBehaviour
         Destroy(sfx);
         Destroy(music);
         Destroy(BunnyScared.instance.gameObject);
+    }
+
+    IEnumerator DanoPlayer()
+    {
+        pisca.SetActive(true );
+        yield return new WaitForSeconds(0.3f);
+        pisca.SetActive(false);
     }
 
 }
