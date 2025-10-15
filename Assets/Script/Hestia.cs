@@ -31,7 +31,7 @@ public class Hestia : Interactable
         }
         if (dialogo == 1)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(true);
             chat.text = "Oi, eu sou Hestia, o espirito protetor dessa casa, eu que te enviei a carta.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -60,7 +60,7 @@ public class Hestia : Interactable
         }
         if (dialogo == 7)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

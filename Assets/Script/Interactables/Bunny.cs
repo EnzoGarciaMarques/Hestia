@@ -36,7 +36,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 1 && Quests.instance.questCompleted)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(true);
             chat.text = "Brigado, pelas cenouras.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -56,7 +56,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 5 && Quests.instance.questCompleted)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;
@@ -66,7 +66,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 1 && !Quests.instance.questCompleted)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(true);
             chat.text = "Que lugar lindo";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -86,11 +86,11 @@ public class Bunny : Interactable
         }
         if (dialogo == 5 && !Quests.instance.questCompleted)
         {
-            chat.text = "Tive uma ideia\r\n Vou fazer de cenoura, o predileto do meu pai\r\nOnde posso encontrar essas cenouras?";
+            chat.text = "Tive uma ideia. Vou fazer de cenoura, o predileto do meu pai\r\nOnde posso encontrar essas cenouras?";
         }
         if (dialogo == 6 && !Quests.instance.questCompleted)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

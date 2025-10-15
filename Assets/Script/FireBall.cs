@@ -23,6 +23,7 @@ public class FireBall : MonoBehaviour
     float timer;
     [SerializeField] PlayerHealth health;
     [SerializeField] float heal;
+    [SerializeField] GameObject cura;
 
     public static FireBall instance;
 
@@ -73,6 +74,7 @@ public class FireBall : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1) && !onCooldown && magic == 3)
         {
             countdown = 6;
+            StartCoroutine(Pisca());
             StartCoroutine(Amplifier());
             SFXManager.Instance.PlaySoundFXClip(attack3, transform, 1f);
         }
@@ -105,6 +107,13 @@ public class FireBall : MonoBehaviour
         onCooldown = true;
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
+    }
+    IEnumerator Pisca()
+    {
+        cura.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        cura.SetActive(false);
+
     }
     IEnumerator Ui()
     {

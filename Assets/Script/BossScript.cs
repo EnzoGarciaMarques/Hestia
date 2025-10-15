@@ -103,7 +103,7 @@ public class BossScript : MonoBehaviour
     {
         atacando = true;
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         anim.SetBool("mosca", false);
         atacando = false;
     }

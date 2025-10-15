@@ -59,10 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7540e746b3c0b084faa17a713b4cd62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
   moquito1: {fileID: 5003243403654150368}
   moquito2: {fileID: 4071973313144034153}
-  moquito3: {fileID: 0}
 --- !u!1001 &1708521499769303005
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,14 @@ public class Moquito : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (moquito1 == null && WeaponManager.instance.weapon == 2)
+        {
+            Destroy(gameObject);
+        }
+        if (moquito2 == null && WeaponManager.instance.weapon == 2)
+        {
+            Destroy(gameObject);
+        }
         float distance = Vector3.Distance(transform.position, player.transform.position);
         Debug.Log($"distance from player: {distance}, playerPos: {player.transform.position}, EnemyPos: {transform.position}");
 

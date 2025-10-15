@@ -38,7 +38,7 @@ public class BunnyScared : Interactable
     {
         if (dialogo == 1)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(true);
             chat.text = "Onde eu estou?";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
@@ -54,7 +54,7 @@ public class BunnyScared : Interactable
         }
         if (dialogo == 4)
         {
-            menuFala.SetActive(!menuFala.activeSelf);
+            menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;

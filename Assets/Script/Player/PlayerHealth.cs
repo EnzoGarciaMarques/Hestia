@@ -40,9 +40,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Start()
     {
-        Vector3 currentRotation = transform.eulerAngles;
-        transform.eulerAngles = new Vector3(currentRotation.x, -90f, currentRotation.z);
-        originalPos = camTransform.localPosition;
+        camTransform.position = new Vector3(0f, 0.6f, 0f);
     }
     private void Update()
     {

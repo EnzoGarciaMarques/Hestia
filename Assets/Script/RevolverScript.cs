@@ -75,6 +75,7 @@ public class RevolverScript : MonoBehaviour
 
     IEnumerator Tiro()
     {
+
         yield return new WaitForSeconds(tempoTiro);
         anima.SetBool("atirando", false);
         nextTimeToFire = true;
