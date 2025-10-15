@@ -14,6 +14,8 @@ public class valdir : MonoBehaviour
     void Start()
     {
         StartCoroutine(vvaldir());
+        valdirf.alpha = 1;
+
     }
 
     // Update is called once per frame
@@ -27,7 +29,6 @@ public class valdir : MonoBehaviour
 
     IEnumerator vvaldir()
     {
-        valdirf.alpha = 1;
         yield return new WaitForSeconds(tempo);
 
         fade = true;
