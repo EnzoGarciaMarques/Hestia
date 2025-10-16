@@ -33,6 +33,7 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (mele.morto == false)
         {
             
@@ -45,6 +46,8 @@ public class BossScript : MonoBehaviour
                         if (ataque == 1 && lastAttack != 1)
                         {
                             anim.SetBool("fumaca", true);
+                            atacando = true;
+                            col.enabled = false;
                             SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
                             lastAttack = ataque;
                             StartCoroutine(Fumaca());
@@ -52,6 +55,8 @@ public class BossScript : MonoBehaviour
                         else if (ataque == 2 && lastAttack != 2)
                         {
                             anim.SetBool("mosca", true);
+                            atacando = true;
+                            col.enabled = false;
                             SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
                             lastAttack = ataque;
                             StartCoroutine(moquito());
@@ -94,19 +99,21 @@ public class BossScript : MonoBehaviour
 
     IEnumerator Fumaca()
     {
-        atacando = true;
         Instantiate(Bala, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("fumaca", false);
-        Destroy(Bala.gameObject);
+        col.enabled = true;
+        Destroy(Bala.gameObject, 1f);
+        yield return new WaitForSeconds(1f);       
         atacando = false;
     }
     IEnumerator moquito()
     {
-        atacando = true;
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("mosca", false);
+        col.enabled = true;
+        yield return new WaitForSeconds(2f);       
         atacando = false;
     }
     IEnumerator Pulo()
@@ -116,7 +123,7 @@ public class BossScript : MonoBehaviour
         col.enabled = true;
         Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         atacando = false;
         hitboxPulo.enabled = false;
     }
