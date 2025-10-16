@@ -40,7 +40,7 @@ public class ManagerLevel : MonoBehaviour
     void Loot()
     {
         lootSpawned = true;
-        float nowLoot = Random.Range(1, 7);
+        int nowLoot = Random.Range(1, 7);
         if (nowLoot == 1)
         {
             if (FireBall.instance.magic != 1)

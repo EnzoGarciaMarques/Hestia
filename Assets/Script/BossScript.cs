@@ -22,12 +22,13 @@ public class BossScript : MonoBehaviour
     float lastAttack;
     [SerializeField] ParticleSystem ps;
     [SerializeField] float tempo;
+    Collider col;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-
+        col = GetComponent<Collider>();
     }
     // Update is called once per frame
     void Update()
@@ -40,7 +41,7 @@ public class BossScript : MonoBehaviour
                 {
                     if (atacando == false)
                     {
-                        float ataque = Random.Range(1, 4);
+                        int ataque = Random.Range(1, 4);
                         if (ataque == 1 && lastAttack != 1)
                         {
                             anim.SetBool("fumaca", true);
@@ -62,6 +63,7 @@ public class BossScript : MonoBehaviour
                             anim.SetBool("pulando", true);
                             atacando = true;
                             lastAttack = ataque;
+                            col.enabled = false;
                             StartCoroutine(Pulo());
 
                         }
@@ -111,6 +113,7 @@ public class BossScript : MonoBehaviour
     {
         yield return new WaitForSeconds(tempo);
         anim.SetBool("pulando", false);
+        col.enabled = true;
         Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
         yield return new WaitForSeconds(0.25f);
