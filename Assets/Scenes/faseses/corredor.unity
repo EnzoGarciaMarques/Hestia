@@ -6266,11 +6266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1762560275678741232, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_fontSizeBase
-      value: 80
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2473288461276623475, guid: 88bfa9a2b223345408726080f1192c77, type: 3}
       propertyPath: m_IsActive
@@ -9596,7 +9596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
