@@ -12,6 +12,7 @@ TagManager:
   - EnemySlash
   - altura
   - boss
+  - BossMusic
   layers:
   - Default
   - TransparentFX

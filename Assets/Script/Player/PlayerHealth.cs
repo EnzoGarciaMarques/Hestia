@@ -98,9 +98,9 @@ public class PlayerHealth : MonoBehaviour
         {
             DamageTaken(2);
         }
-        if (other.gameObject.CompareTag("boss"))
+        if (other.gameObject.CompareTag("BossMusic"))
         {
-            DamageTaken(1);
+            music.SetActive(false);
         }
     } 
 
