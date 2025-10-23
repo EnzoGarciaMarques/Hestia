@@ -92,7 +92,6 @@ public class Bunny : Interactable
         }
         if (dialogo == 6 && !Quests.instance.questCompleted)
         {
-            menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;
             mouseMovement.enabled = true;
@@ -100,6 +99,7 @@ public class Bunny : Interactable
             promptMessage = prompt;
             Quests.instance.getQuest = true;
             risadinha = false;
+            menuFala.SetActive(false);
         }
     }
     protected override void Interact()

@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/faseses/boss.unity
     guid: e3a6021f66d3a9842b2aea734f19d4cd
+  - enabled: 1
+    path: Assets/Scenes/Fim.unity
+    guid: 093f563fd326aaa4c80b85e3ab856cb1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 8604546840750ef4a8824b5ce7b9623f, type: 3}
   m_UseUCBPForAssetBundles: 0

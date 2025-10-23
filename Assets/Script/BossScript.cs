@@ -49,7 +49,7 @@ public class BossScript : MonoBehaviour
     }
     void Ataques()
     {
-        float ataque = Random.Range(1, 4);
+        int ataque = Random.Range(1, 4);
         if (ataque == 1)
         {
             anim.SetBool("fumaca", true);
