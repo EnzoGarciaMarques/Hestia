@@ -51,6 +51,7 @@ public class ManagerLevel : MonoBehaviour
             else
             {
                 lootSpawned = false;
+
             }
 
         }

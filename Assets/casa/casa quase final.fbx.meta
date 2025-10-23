@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: LUZ
+    second: {fileID: 2100000, guid: 85f47be7fccea0e4c80f905b629b37d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: armario chao
     second: {fileID: 2100000, guid: bfec2e5029e2a4249b89b1dcf56220ab, type: 2}
   - first:

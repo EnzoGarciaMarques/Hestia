@@ -5697,6 +5697,10 @@ PrefabInstance:
       propertyPath: bulletTrail
       value: 
       objectReference: {fileID: 242096981687296277, guid: 4fada359db619dd4f8b0ed914e82bb10, type: 3}
+    - target: {fileID: 3190068322453706684, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5691abab19574394d8a7205743074f23, type: 2}
     - target: {fileID: 4671382934026805329, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: boga
       value: 
@@ -5709,6 +5713,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5465584113875211426, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5002835603401446712, guid: 58dfbdccd2788d940948cac7ee93e847, type: 3}
     - target: {fileID: 5550007564333279321, guid: 6842fbccd12cf484a8bdbc8abf0ddc93, type: 3}
       propertyPath: promptText
       value: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -56,6 +57,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 5 && Quests.instance.questCompleted)
         {
+            SceneManager.LoadScene("Fim");
             menuFala.SetActive(false);
             chat.text = "";
             dialogo = 0;

@@ -54,22 +54,19 @@ public class BossScript : MonoBehaviour
         {
             anim.SetBool("fumaca", true);
             SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
-            lastAttack = ataque;
             StartCoroutine(Fumaca());
         }
-        else if (ataque == 2)
+        if (ataque == 2)
         {
-            anim.SetBool("mosca", true);
+            anim.SetBool("fumaca", true);
             SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
-            lastAttack = ataque;
             StartCoroutine(moquito());
 
         }
-        else if (ataque == 3)
+        if (ataque == 3)
         {
             SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
             anim.SetBool("pulando", true);
-            lastAttack = ataque;
             col.enabled = false;
             StartCoroutine(Pulo());
 
@@ -98,15 +95,17 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("fumaca", false);
         Destroy(Bala.gameObject, 1f);
-        yield return new WaitForSeconds(1f);       
+        yield return new WaitForSeconds(1f);
+        float ataque = Random.Range(1, 4);
         atacando = false;
     }
     IEnumerator moquito()
     {
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.6f);
-        anim.SetBool("mosca", false);
-        yield return new WaitForSeconds(2f);       
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("fumaca", false);
+        yield return new WaitForSeconds(2f);
+        float ataque = Random.Range(1, 4);
         atacando = false;
     }
     IEnumerator Pulo()
@@ -117,6 +116,7 @@ public class BossScript : MonoBehaviour
         Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
         yield return new WaitForSeconds(1f);
+        float ataque = Random.Range(1, 4);
         atacando = false;
         hitboxPulo.enabled = false;
     }
