@@ -36,34 +36,28 @@ public class BossScript : MonoBehaviour
         
         if (mele.morto == false)
         {
-            
-           
-                if (ice == false)
+            if (ice == false)
+            {
+                if (atacando == false)
                 {
-                    if (atacando == false)
-                    {
-                        atacando = true;
-                        Ataques();
-
-                        
-                    }
-                    
+                    atacando = true;
+                    Ataques();
                 }
-           
+            }
         }
         
     }
     void Ataques()
     {
         float ataque = Random.Range(1, 4);
-        if (ataque == 1 && lastAttack != 1)
+        if (ataque == 1)
         {
             anim.SetBool("fumaca", true);
             SFXManager.Instance.PlaySoundFXClip(attackFumaca, transform, 1f);
             lastAttack = ataque;
             StartCoroutine(Fumaca());
         }
-        else if (ataque == 2 && lastAttack != 2)
+        else if (ataque == 2)
         {
             anim.SetBool("mosca", true);
             SFXManager.Instance.PlaySoundFXClip(attackMosca, transform, 1f);
@@ -71,7 +65,7 @@ public class BossScript : MonoBehaviour
             StartCoroutine(moquito());
 
         }
-        else if (ataque == 3 && lastAttack != 3)
+        else if (ataque == 3)
         {
             SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
             anim.SetBool("pulando", true);
@@ -103,7 +97,6 @@ public class BossScript : MonoBehaviour
         Instantiate(Bala, Balapos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("fumaca", false);
-        col.enabled = true;
         Destroy(Bala.gameObject, 1f);
         yield return new WaitForSeconds(1f);       
         atacando = false;
@@ -113,7 +106,6 @@ public class BossScript : MonoBehaviour
         Instantiate(moquitos, Balapos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.6f);
         anim.SetBool("mosca", false);
-        col.enabled = true;
         yield return new WaitForSeconds(2f);       
         atacando = false;
     }
