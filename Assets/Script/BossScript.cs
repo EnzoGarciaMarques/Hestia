@@ -23,6 +23,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] ParticleSystem ps;
     [SerializeField] float tempo;
     Collider col;
+    [SerializeField] DamageEnemy invul;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +68,7 @@ public class BossScript : MonoBehaviour
         {
             SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
             anim.SetBool("pulando", true);
-            col.enabled = false;
+            invul.enabled = false;
             StartCoroutine(Pulo());
 
         }
@@ -96,7 +97,6 @@ public class BossScript : MonoBehaviour
         anim.SetBool("fumaca", false);
         Destroy(Bala.gameObject, 1f);
         yield return new WaitForSeconds(1f);
-        float ataque = Random.Range(1, 4);
         atacando = false;
     }
     IEnumerator moquito()
@@ -105,18 +105,16 @@ public class BossScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("fumaca", false);
         yield return new WaitForSeconds(2f);
-        float ataque = Random.Range(1, 4);
         atacando = false;
     }
     IEnumerator Pulo()
     {
         yield return new WaitForSeconds(tempo);
         anim.SetBool("pulando", false);
-        col.enabled = true;
+        invul.enabled = true;
         Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
-        yield return new WaitForSeconds(1f);
-        float ataque = Random.Range(1, 4);
+        yield return new WaitForSeconds(0.5f);
         atacando = false;
         hitboxPulo.enabled = false;
     }

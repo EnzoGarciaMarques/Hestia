@@ -16750,6 +16750,7 @@ MonoBehaviour:
   attackpulo: {fileID: 8300000, guid: d849ee9b3f435a141b2643f954ed81ba, type: 3}
   ps: {fileID: 80160679}
   tempo: 2
+  invul: {fileID: 1075935618}
 --- !u!114 &1075935617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16783,8 +16784,8 @@ MonoBehaviour:
   soundDano: {fileID: 8300000, guid: 317c97f8beb57ab49b3602c6dba5459f, type: 3}
   soundMorte: {fileID: 8300000, guid: 25b6993e76f64da4184ab93dce9c73a0, type: 3}
   level: {fileID: 1856143372}
---- !u!65 &1075935619
-BoxCollider:
+--- !u!135 &1075935619
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16798,12 +16799,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.388032, y: 4.514015, z: 0.20000008}
-  m_Center: {x: 0.0036210623, y: 0.7177614, z: -0.0000022655852}
+  m_Radius: 2.6544194
+  m_Center: {x: -0.107602134, y: 0.28485298, z: -9.76903e-10}
 --- !u!1001 &1078367806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17938,7 +17939,7 @@ Transform:
   m_GameObject: {fileID: 1169273348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.62420976, z: -0, w: 0.78125685}
-  m_LocalPosition: {x: -282.88943, y: -2.0658555, z: 3.1070907}
+  m_LocalPosition: {x: -282.99707, y: -2.3520873, z: 2.6314492}
   m_LocalScale: {x: 1.6837162, y: 1.6837157, z: 1.6837162}
   m_ConstrainProportionsScale: 0
   m_Children: []
