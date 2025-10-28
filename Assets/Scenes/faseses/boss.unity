@@ -17719,12 +17719,16 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9213998866799243859, guid: e0bfd0ceb99912b44a29ae7edb959b77, type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213998866799243859, guid: e0bfd0ceb99912b44a29ae7edb959b77, type: 3}
       propertyPath: CollisionModule.type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9213998866799243859, guid: e0bfd0ceb99912b44a29ae7edb959b77, type: 3}
       propertyPath: CollisionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9213998866799243859, guid: e0bfd0ceb99912b44a29ae7edb959b77, type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
@@ -20216,7 +20220,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: fa9af9ac17cbf8643be3f6f9be66cd57, type: 3}
   m_Resource: {fileID: 8300000, guid: fa9af9ac17cbf8643be3f6f9be66cd57, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.253
   m_Pitch: 1
   Loop: 1
   Mute: 0

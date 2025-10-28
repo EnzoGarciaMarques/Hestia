@@ -32,7 +32,7 @@ public class Hestia : Interactable
         if (dialogo == 1)
         {
             menuFala.SetActive(true);
-            chat.text = "Oi, eu sou Hestia, o espirito protetor dessa casa, eu que te enviei a carta.";
+            chat.text = "Oi, eu sou Hestia, o espírito protetor dessa casa, eu que te enviei a carta.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
@@ -44,11 +44,11 @@ public class Hestia : Interactable
         }
         if ( dialogo == 3)
         {
-            chat.text = "Atualmente a casa se tornou um resquicio do que era, ela perdeu quase totalmente sua magia, sua beleza e sua vida.";
+            chat.text = "Atualmente a casa se tornou um resquício do que era, ela perdeu quase totalmente sua magia, sua beleza e sua vida.";
         }
         if (dialogo == 4)
         {
-            chat.text = "Mas tem uma maneira de restaurar ela e transformar ela em algo que nunca vi antes.";
+            chat.text = "Mas tem uma maneira de restaura-la e transformá-la em algo que nunca vi antes.";
         }
         if (dialogo == 5)
         {

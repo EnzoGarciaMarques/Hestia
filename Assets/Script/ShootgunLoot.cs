@@ -5,6 +5,7 @@ public class ShootgunLoot : Interactable
 {
     [SerializeField] GameObject espada;
     [SerializeField] GameObject revolver;
+    [SerializeField] GameObject txt;
     void Start()
     {
         
@@ -31,5 +32,6 @@ public class ShootgunLoot : Interactable
         WeaponManager.instance.weapon = 2;
         
         Destroy(gameObject);
+        Destroy(txt);   
     }
 }

@@ -68,7 +68,7 @@ public class BossScript : MonoBehaviour
         {
             SFXManager.Instance.PlaySoundFXClip(attackpulo, transform, 1f);
             anim.SetBool("pulando", true);
-            invul.enabled = false;
+            col.enabled = false;
             StartCoroutine(Pulo());
 
         }
@@ -111,7 +111,7 @@ public class BossScript : MonoBehaviour
     {
         yield return new WaitForSeconds(tempo);
         anim.SetBool("pulando", false);
-        invul.enabled = true;
+        col.enabled = true;
         Instantiate(ps, saida.position, ps.transform.rotation);
         hitboxPulo.enabled = true;
         yield return new WaitForSeconds(0.5f);

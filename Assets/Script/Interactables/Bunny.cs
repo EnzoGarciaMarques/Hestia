@@ -76,7 +76,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 2 && !Quests.instance.questCompleted)
         {
-            chat.text = "Essa cozinha foi feita pra mim, parece que a casa sabia do que eu precisava.";
+            chat.text = "Essa cozinha é perfeita pra mim, parece que a casa sabia do que eu precisava.";
         }
         if (dialogo == 3 && !Quests.instance.questCompleted)
         {
@@ -84,11 +84,11 @@ public class Bunny : Interactable
         }
         if (dialogo == 4 && !Quests.instance.questCompleted)
         {
-            chat.text = "Pode ser de morango o predileto do meu maninho, ou de chocolate o predileto do meu… Ex marido…";
+            chat.text = "Pode ser de morango o predileto do meu maninho, ou de chocolate o predileto do meu… Ex-marido…";
         }
         if (dialogo == 5 && !Quests.instance.questCompleted)
         {
-            chat.text = "Tive uma ideia. Vou fazer de cenoura, o predileto do meu pai\r\nOnde posso encontrar essas cenouras?";
+            chat.text = "Tive uma ideia! Vou fazer de cenoura, o predileto do meu pai!\r\nOnde posso encontrar essas cenouras?";
         }
         if (dialogo == 6 && !Quests.instance.questCompleted)
         {
