@@ -32,7 +32,7 @@ public class BossScript : MonoBehaviour
         col = GetComponent<Collider>();
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if (mele.morto == false)
