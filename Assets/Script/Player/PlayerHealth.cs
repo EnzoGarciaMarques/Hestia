@@ -101,6 +101,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.CompareTag("BossMusic"))
         {
             music.SetActive(false);
+            Destroy(other.gameObject);
         }
     } 
 

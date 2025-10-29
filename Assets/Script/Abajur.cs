@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Abajur : MonoBehaviour
 {
-    [SerializeField] bool abajurQuebrado;
+    [SerializeField] GameObject abajurQuebrado;
+    [SerializeField] GameObject abajur;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,14 +15,9 @@ public class Abajur : MonoBehaviour
     {
         if (Quests.instance.rescue)
         {
-            if (abajurQuebrado)
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                gameObject.SetActive (true);
-            }
+            abajur.SetActive(true);
+            abajurQuebrado.SetActive(false);
+
         }
     }
 }
