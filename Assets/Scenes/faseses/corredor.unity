@@ -870,7 +870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volte Para casa
+  m_text: Volte para casa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1d4616e79673ef4499281e638dc27a6e, type: 2}
   m_sharedMaterial: {fileID: 3429167720955597043, guid: 1d4616e79673ef4499281e638dc27a6e, type: 2}

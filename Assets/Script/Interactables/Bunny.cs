@@ -38,7 +38,7 @@ public class Bunny : Interactable
         if (dialogo == 1 && Quests.instance.questCompleted)
         {
             menuFala.SetActive(true);
-            chat.text = "Brigado, pelas cenouras.";
+            chat.text = "Brigada pelas cenouras.";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
@@ -53,7 +53,7 @@ public class Bunny : Interactable
         }
         if (dialogo == 4 && Quests.instance.questCompleted)
         {
-            chat.text = "No final das contas eu acabo nunca comendo um doce meu...";
+            chat.text = "No final das contas, eu acabo nunca comendo um doce meu...";
         }
         if (dialogo == 5 && Quests.instance.questCompleted)
         {
@@ -69,7 +69,7 @@ public class Bunny : Interactable
         if (dialogo == 1 && !Quests.instance.questCompleted)
         {
             menuFala.SetActive(true);
-            chat.text = "Que lugar lindo";
+            chat.text = "Que lugar lindo!";
             mouseMovement.enabled = false;
             playerMovement.enabled = false;
             promptMessage = "";
@@ -80,11 +80,11 @@ public class Bunny : Interactable
         }
         if (dialogo == 3 && !Quests.instance.questCompleted)
         {
-            chat.text = "Vou fazer um bolo de agradecimento";
+            chat.text = "Vou fazer um bolo de agradecimento.";
         }
         if (dialogo == 4 && !Quests.instance.questCompleted)
         {
-            chat.text = "Pode ser de morango o predileto do meu maninho, ou de chocolate o predileto do meu… Ex-marido…";
+            chat.text = "Pode ser de morango, o predileto do meu maninho; ou de chocolate, o predileto do meu… ex-marido…";
         }
         if (dialogo == 5 && !Quests.instance.questCompleted)
         {
